@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Algoritmos Intermedio/Avanzado</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png" type="image/png">
+</head>
+<body>
+    <div id="cont-global">
+        <section id="cont1">
+            <div class="images">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png" alt="JavaScript logo">
+            </div>
+            <h1>Algoritmos con JavaScript Vanilla <br> Nivel Intermedio/Avanzado</h1>
+            <h2>William Andres Sanchez Rojas</h2>
+            <p>Análisis y Desarrollo de Software</p>
+            <p>Número de ficha 3065273</p>
+            <hr>
+        </section>
+        <section id="cont2">
+            <h1>Ejercicio condicional #1: Sistema de Calificaciones Detallado</h1>
+            <h2>Estructura condicional</h2>
+            <p>Un colegio necesita un sistema para evaluar el rendimiento de los estudiantes en una materia 
+            específica. El sistema debe permitir ingresar 10 notas numéricas (entre 0 y 5). Luego, calculará el promedio 
+            de estas notas y determinará si el estudiante aprobó o no (se considera aprobado con un promedio de 3.0 o 
+            superior). Finalmente, mostrará la calificación literal correspondiente al promedio, utilizando la siguiente 
+            escala: <br>
+            ● 0.0 a 2.9: "Reprobado" <br>
+            ● 3.0 a 3.9: "Aceptable"  <br>
+            ● 4.0 a 4.4: "Sobresaliente" <br>
+            ● 4.5 a 5.0: "Excelente" <br>
+            Salida Esperada: El sistema mostrará el promedio numérico de las 10 notas, un mensaje indicando si el 
+            estudiante aprobó o reprobó, y la calificación literal correspondiente.</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato: Notas numéricas del estudiante (se ingresan 10).</li></p>
+                <h3>Proceso:</h3>
+                <p>Declaramos una variable la cual se usara para sumar todas las notas, usamos un bucle que repetira 10 veces para que el usuario pueda ingresar las 10 notas, pero antes de aceptar la nota se validara si el valor ingresado esta entre 0 y 5, si es valida se sumara al total y continuara si no es valida arrojara error y no avanzara mas, luego de calcula el promedio dividiendo la suma total de notas con 10, dependiendo del resultado nos arrojara el mensaje que se encuentra en la condicional basada en el promedio, y se determina si el estudiante aprobo o no. y al final se mostrara el mensaje con el resultado y si aprobo o no.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>- Promedio final del estudiante (ejemplo: 3.7). <br>- El estado del estudiante si aprobó o reprobó. <br> - Calificación literal: "Excelente", "Sobresaliente", "Aceptable" o "Reprobado" <br> - Por ultimo el mensaje de salida final con la concatenacion total de todo.</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+                <code>
+                    function rendimientoEstudiante () {
+
+                    alert("Algoritmo para evaluar el rendimiento de los estudiantes en una materia especifica el sistema debe permitir ingresar 10 notas numericas entre 0 y 5 luego calculara el promedio de estas notas y determinara si el estudiante aprobo o no y se considera aprobado con un promedio de 3.0 o superior finalmente debera mostrar la calificacion literal correspondiente al promedio");
+
+                    let total = 0;
+
+                    // Usamos un bucle for que se repite 10 veces (una por cada nota) use esto por lo que el instructor explico xd
+                    for (let i = 0; i < 10; ) {
+                        let nota = parseFloat(prompt("Ingresa la nota número " + (i + 1))); // Pedimos la nota al usuario
+                        if (nota >= 0 && nota <= 5) {                                       // Verificamos que la nota sea válida (entre 0 y 5)
+                            total = total + nota; // sumamos la nota al total, esto lo hacemos gracias a que cada vez que agreguemos una nota se sumara a la anterior que se agrego
+                            i++; // solo aumentamos si la nota fue válida
+                        } else {
+                            alert("Nota inválida. Debe estar entre 0 y 5."); // mensaje de error
+                        }
+                    }
+
+                    let promedio = total / 10;
+                    let mensaje = "";
+                    let resultado = "";
+
+                    // Según el promedio, asignamos el mensaje que sacara el estudiante por la nota obtenida
+                    if (promedio >= 4.5) {
+                        mensaje = "Excelente";
+                    } else if (promedio >= 4.0) {
+                        mensaje = "Sobresaliente";
+                    } else if (promedio >= 3.0) {
+                        mensaje = "Aceptable";
+                    } else {
+                        mensaje = "Reprobado";
+                    }
+
+                    // Decidimos si aprobó o no
+                    if (promedio >= 3.0) {
+                        resultado = "aprobó";
+                    } else {
+                        resultado = "reprobó";
+                    }
+
+                    // Mostramos el resultado final al usuario
+                    alert("El estudiante " + resultado + " con un promedio de " + promedio + " - " + mensaje);
+                }
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="boton1">Click Aquí</button>
+            <hr>
+        </section>
+        <section id="cont3">
+            <h1>Ejercicio condicional #2: Clasificación de Etapas de la Vida con Contexto Educativo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+
+        <section id="cont4">
+            <h1>3. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+                <section id="cont3">
+            <h1>2. Título o nombre del algoritmo</h1>
+            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato</li></p>
+                <p><li>Segundo Dato</li></p>
+                <p><li>Tercer Dato</li></p>
+                <p><li>Cuarto Dato</li></p>
+                <h3>Proceso:</h3>
+                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+            <code>
+                    <span class="comment">// Declarar un array</span>
+                    let colores = ["rojo", "verde", "azul"];
+                    console.log(colores);
+                    console.log(typeof colores); 
+                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="">Click Aquí</button>
+            <hr>
+        </section>
+
+        <div class="botones">
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+        </div>
+        <div class="cont-menu">
+            <button class="btn-menu" id="btn-active"  ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <ul id="ul-btns" class="">
+                <li><h3>Menú</h3></li>
+                <li><button id="cap1">Portada</button></li>
+                <li><button id="cap2">Algoritmo 1: Nombre del algoritmo</button></li>
+                <li><button id="cap3">Algoritmo 2: Nombre del algoritmo</button></li>
+                <li><button id="cap4">Algoritmo 3: Nombre del algoritmo</button></li>
+                <li><button id="cap5">Algoritmo 4: Nombre del algoritmo</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Puedes encontrarme en:</p>
+        <ul class="social-links">
+            <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+            
+            <li><a href="mailto:tucorrero@gmail.com"><i class="fas fa-envelope"></i> Correo Electrónico</a></li>
+        </ul>
+        <p class="copyright">&copy; 2025 Tus Nombres - Web Developer</p>
+    </footer>
+
+
+
+    <script src="js/mainn.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
