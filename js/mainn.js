@@ -60,8 +60,6 @@ function clasificacionEtapas () {
     alert("Por favor, ingresa un valor numérico válido para la edad.");
     return; // Sale de la función si la validación falla, evitando errores posteriores.
     }
-
-// Comienza la lógica para clasificar la etapa de la vida según la edad ingresada.
     if (edad == "") {
         etapa = "Ingresa un valor valido \n(Valor numerico)";
     }else if (edad < 12) {

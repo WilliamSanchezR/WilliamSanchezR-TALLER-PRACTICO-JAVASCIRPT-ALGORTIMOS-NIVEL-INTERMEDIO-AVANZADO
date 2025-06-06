@@ -101,7 +101,7 @@
         </section>
         <section id="cont3">
             <h1>Ejercicio condicional #2: Clasificación de Etapas de la Vida con Contexto Educativo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <h2>Estructura condicional</h2>
             <p>En un contexto educativo, es importante identificar en qué etapa de la vida se encuentran los 
             estudiantes para adaptar las estrategias pedagógicas. Un sistema debe clasificar a un estudiante según su 
             edad al momento de la inscripción en un programa específico: <br>
@@ -115,462 +115,1038 @@
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
-                <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <h3>Datos de entrada</h3>
+                <p><li>Primer Dato: Edad del usuario (valor nuemrico)</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Empezamos creando dos variables en una vamos a guardar el valor numerico de la edad y en la otra se guardara el mensaje final y sea mas sencillo mostrarlo al final, despues un alert donde se da a entender el proposito del algoritmo, despues el usuario le asignara el valor a la variable(edad) con el prompt y antes del prompt le agregamos un parseInt el cual cada valor que ingrese el usuario lo pasa a un valor numerico, luego una condicional validando que el numero ingresado sea realmente un valor numerico, luego de eso hacemos una serie de condicionales para clasificar la edad del usuario en una etapa de vida y asignar un mensaje contextual y al final se muestra el mensaje correspondiente mediante el alert.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Mensaje que indica en qué etapa de la vida se encuentra el usuario, acompañado de un contexto educativo. <br>
+                Ejemplo: Adulto - Posiblemente cursando estudios de posgrado o formación continua.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
-                </code>
-            </pre>
-            <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
-            <hr>
-        </section>
+                <code>
+                    function clasificacionEtapas () {
+                        let edad = 0;
+                        let etapa = "";
 
+                        alert("Clasificación de Etapas de la Vida con Contexto Educativo");
+
+                        edad = parseInt(prompt("Ingresa tu edad \n(valor numerico)"))
+
+                        if (isNaN(edad)) { //     // Realiza una validación para asegurarse de que la entrada del usuario sea un número válido.
+                        alert("Por favor, ingresa un valor numérico válido para la edad.");
+                        return; // Sale de la función si la validación falla, evitando errores posteriores.
+                        }
+                        if (edad == "") {
+                            etapa = "Ingresa un valor valido \n(Valor numerico)";
+                        }else if (edad < 12) {
+                            etapa = "Niño(a) - Enfocado en aprendizaje lúdico y exploración.";
+                        }else if (edad < 17) {
+                            etapa = "Adolescente - Etapa de desarrollo del pensamiento crítico y la identidad. ";
+                        } else if (edad < 25) {
+                            etapa = "Joven Adulto - Transición a la educación superior o al mundo laboral. ";
+                        } else if (edad < 60) {
+                            etapa = "Adulto - Posiblemente cursando estudios de posgrado o formación continua. ";
+                        } else {
+                            etapa = "Adulto Mayor - Participación en programas de aprendizaje permanente o por interés personal. ";
+                        }
+
+                        alert(etapa)
+                    }
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="boton2">Click Aquí</button>
+            <hr>
+        </section>
         <section id="cont4">
-            <h1>3. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <h1>Ejercicio condicional #3: Conversor Flexible de Tiempo (Días y Meses)</h1>
+            <h2>Estructura condicional</h2>
+            <p>Un sistema permite al usuario elegir si desea convertir un número a un día de la semana o a un 
+                mes del año. Primero, el sistema preguntará al usuario si desea trabajar con "días" o "meses". Luego, 
+                solicitará un número. <br>
+                ● Si el usuario eligió "días" e ingresa un número entre 1 y 7, el sistema mostrará el nombre del día 
+
+                el número está fuera de este rango, mostrará un mensaje de error. <br>
+                ● Si el usuario eligió "meses" e ingresa un número entre 1 y 12, el sistema mostrará el nombre del 
+                mes correspondiente (1: Enero, 2: Febrero, ..., 12: Diciembre) utilizando una estructura switch 
+                case. Si el número está fuera de este rango, mostrará un mensaje de error.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Palabra que el usuario ingresa para indicar si desea trabajar con un día o un mes.</li></p>
+                <p><li>Segundo Dato: Número que representa el día de la semana o el mes del año, según la elección previa.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se declaran dos variables, una para guardar si el usuario quiere trabajar con días o meses y otra para el número que va a ingresar. Luego se le pregunta al usuario si quiere convertir un número en día o mes. Dependiendo de lo que escriba, se le pedirá un número dentro del rango correspondiente. Se valida esta decisión usando un switch. Después, si eligió día, se usa otro switch para mostrar qué día de la semana corresponde al número. Si eligió mes, otro switch mostrará el nombre del mes según el número ingresado. Si el número no es válido, se muestra un mensaje de error. También se muestra un error si no escribió correctamente "dia" o "mes".
+                </p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Si eligió "dia": muestra el nombre del día (lunes, martes, etc.). <br>
+                    - Si eligió "mes": muestra el nombre del mes (enero, febrero, etc.). <br>
+                    - Si la palabra o número no es válida: muestra un mensaje de error.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                function conversorTiempo () {
+                    let tipoTiempo = '';
+                    let numero = 0;
+
+                    alert("Dependiendo de la elección del usuario y el número ingresado, el sistema mostrará el día de la semana o el mes correspondiente, o un mensaje de error si la entrada no es válida.");
+
+                    tipoTiempo = prompt("Ingrese la palabra día o mes que desee trabajar");
+
+                    switch (tipoTiempo) { // Utiliza una estructura switch para manejar diferentes casos basados en la entrada del usuario para el tipo de tiempo.
+
+                        case 'dia':
+                            numero = parseInt(prompt("Ingrese un número entre 1 y 7"))
+                            break;
+                        case 'mes':
+                            numero = parseInt(prompt("Ingresa un número entre 1 y 12"))
+
+                            break;
+
+                        default: // Caso por defecto si el usuario no ingresa 'dia' o 'mes'.
+                            alert("No se ingreso un valor valido para convertir el tiempo");
+                            break;
+                    }
+
+                // Si el usuario eligió trabajar con 'dia'.
+
+                    if (tipoTiempo === "dia") {
+                        switch (numero) {
+                            case 1:
+                                alert("El dia ingresado es lunes")
+                                break;
+                            case 2:
+                                alert("El dia ingresado es martes")
+                                break;
+                            case 3:
+                                alert("El dia ingresado es miercoles")
+                                break;
+                            case 4:
+                                alert("El dia ingresado es jueves")
+                                break;
+                            case 5:
+                                alert("El dia ingresado es viernes")
+                                break;
+                            case 6:
+                                alert("El dia ingresado es sabado")
+                                break;
+                            case 7:
+                                alert("El dia ingresado es domingo")
+                                break;
+
+                            default:
+                                alert("El valor ingresado no corresponde a un dia de la semana ")
+                                break;
+                        }
+                    }
+
+                // Si el usuario eligió trabajar con 'mes'.
+
+                    if(tipoTiempo === "mes"){
+                        switch (numero) {
+                            case 1:
+                                alert("El mes ingresado es enero");                
+                                break;
+                                case 2:
+                                alert("El mes ingresado es febrero");                
+                                break;
+                                case 3:
+                                alert("El mes ingresado es marzo");                
+                                break;
+                                case 4:
+                                alert("El mes ingresado es abril");                
+                                break;
+                                case 5:
+                                alert("El mes ingresado es mayo");                
+                                break;
+                                case 6:
+                                alert("El mes ingresado es junio");                
+                                break;
+                                case 7:
+                                alert("El mes ingresado es julio");                
+                                break;
+                                case 8:
+                                alert("El mes ingresado es agosto");                
+                                break;
+                                case 9:
+                                alert("El mes ingresado es septiembre");                
+                                break;
+                                case 10:
+                                alert("El mes ingresado es octubre");                
+                                break;
+                                case 11:
+                                alert("El mes ingresado es noviembre");                
+                                break;
+                                case 12:
+                                alert("El mes ingresado es diciembre");                
+                                break;
+                        
+                            default:
+                                alert("El valor ingresado no corresponde a un mes del año ")
+                                break;
+                        }
+                    }
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton3">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont5">
+            <h1>Ejercicio condicional #4: Menú Interactivo de Operaciones Matemáticas </h1>
+            <h2>Estructura condicional</h2>
+            <p> Un programa ofrece un menú interactivo para realizar operaciones matemáticas básicas. El 
+                usuario verá las siguientes opciones: <br>
+                1. Sumar dos números <br>
+                2. Restar dos números <br>
+                3. Multiplicar dos números <br> 
+                4. Dividir dos números <br>
+                El usuario debe ingresar el número de la opción deseada. Utilizando una estructura switch case, el 
+                sistema ejecutará la operación seleccionada. Para las opciones 1 a 4, el sistema solicitará los dos números 
+                necesarios para realizar el cálculo y mostrará el resultado.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato:Opción de operación (1 para suma, 2 para resta, 3 para división, 4 para multiplicación).</li></p>
+                <p><li>Segundo Dato: Primer número (N1).</li></p>
+                <p><li>Tercer Dato: Segundo número (N2).</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero declaramos las variables necesarias para almacenar el tipo de operación que el usuario elija, los dos números y el resultado de la operación. Se muestra un mensaje que explica que es un menú para operaciones matemáticas básicas, y se le pide al usuario que elija una opción entre cuatro posibles. Luego se le pide que ingrese dos valores numéricos. Dependiendo de la opción seleccionada, usamos un switch que realiza la operación correspondiente: suma, resta, división o multiplicación. Si la opción no es válida, se muestra un mensaje de error. Finalmente, el sistema muestra el resultado de la operación seleccionada.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p> - El resultado de la operación elegida (suma, resta, división o multiplicación). <br>
+                    - O un mensaje de error si se ingresa una opción inválida.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                function menuInteractivo () {
+                    let tipoOperacion = '';
+                    let valor = 0;
+
+                    alert("Menú interactivo para realizar operaciones matemáticas básicas.")
+
+                    tipoOperacion = prompt("INGRESE EL NUMERO DE LA OPCION DESEADA: \n1.Suma Entre Dos Numeros\n2.Resta Entre Dos Numeros\n3.Division Entre Dos Numeros\n4.Multiplicacion Entre Dos Numeros"
+                    )
+
+                    let N1 = parseInt(prompt("Ingrese el primer valor")); // Solicita al usuario que ingrese el primer valor y lo convierte a un número entero.
+                    let N2 = parseInt(prompt("Ingrese el segundo valor"));
+
+                    switch (tipoOperacion) { // Usamos una estructura switch para realizar la operacion escogida por el usuario, calculando lo escogido por el usurio en cada uno de los casos
+                        case '1':
+                            valor = N1 + N2;
+                            alert("El resultado de la suma es: " + valor);
+                            break;
+                        case '2':
+                            valor = N1 - N2;
+                            alert("El resultado de la resta es: " + valor);
+                            break;
+                        case '3':
+                            valor = N1 / N2;
+                            alert("El resultado de la division es: " + valor);
+                            break;
+                        case '4':
+                            valor = N1 * N2;
+                            alert("El resultado de la multiplicacion es: " + valor);
+                            break;
+                        default:
+                            alert("No se ingresó una opción válida para la operación.");
+                            break;
+                    }
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton4">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont6">
+            <h1>Ejercicio condicional #5: Cálculo de Tarifa de Servicio Público con Contexto Residencial </h1>
+            <h2>Estructura condicional</h2>
+            <p>Una empresa de servicios públicos en un municipio colombiano aplica diferentes tarifas de 
+            acuerdo con el estrato socioeconómico de las viviendas de los usuarios, buscando así una distribución más 
+            equitativa de los costos: <br>
+            ● Estrato 1 (viviendas de bajos recursos): $10.000  <br>
+            ● Estrato 2 (viviendas de recursos medios bajos): $15.000  <br>
+            ● Estrato 3 (viviendas de recursos medios): $20.000 <br>
+            ● Estrato 4 (viviendas de recursos medios altos), 5 y 6 (viviendas de altos recursos): $25.000 <br>
+            El sistema debe solicitar al usuario el estrato de su vivienda (un número entero). Utilizando una estructura 
+            switch case, el sistema determinará y mostrará el valor de la tarifa a pagar. Si el usuario ingresa un 
+            estrato inválido, se mostrará un mensaje de error.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Estrato de la vivienda (número del 1 al 7).</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Se declara una variable para almacenar el estrato que el usuario va a ingresar. Luego, se muestra un mensaje explicando que la empresa aplica diferentes tarifas según el estrato socioeconómico. Después se le pide al usuario que digite el número de estrato entre 1 y 7. Utilizamos una estructura switch que evalúa el estrato y, según el caso, muestra la tarifa correspondiente junto con una breve descripción del nivel de ingresos de la vivienda. Si el número ingresado no está entre los valores válidos, se activa el caso default mostrando un mensaje de error indicando que no se ingresó un estrato válido.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p> - Mensaje con la descripción del nivel socioeconómico de la vivienda y el valor de la tarifa correspondiente. <br> - Mensaje de error si se ingresa un estrato inválido.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                function calculoDeTarifa () {
+
+                    let estrato = 0;
+
+                    alert("Una empresa de servicios públicos en un municipio colombiano aplica diferentes tarifas de acuerdo con el estrato socioeconómico de las viviendas de los usuarios, buscando así una distribución más equitativa de los costos:")
+
+                    estrato = prompt("Ingrese el estrato de su vivienda (1-7) \n(Valor numerico)")
+
+                    switch(estrato){   // Utiliza una estructura switch para determinar la tarifa correspondiente al estrato ingresado.
+                        case '1':
+                        alert("Viviendas de bajos recursos\nEl valor de su tarifa es de: $10.000")
+                        break;
+
+                        case '2':
+                        alert("Viviendas de recursos medios bajos\nEl valor de su tarifa es de: $15.000")
+                        break;
+
+                        case '3':
+                        alert("Viviendas de recursos medios\nEl valor de su tarifa es de: $20.000")
+                        break
+
+                        case '4':
+                        alert("Viviendas de recursos medios altos\nEl valor de su tarifa es de: $25.000")
+                        break
+
+                        case '5':
+                        alert("Viviendas de altos recursos\nEl valor de su tarifa es de: $25.000")
+                        break
+
+                        case '6':
+                        alert("Viviendas de altos recursos\nEl valor de su tarifa es de: $25.000")
+                        break
+
+                        default:
+                            alert("No se ingreso un estrato valido")
+                        break;
+
+                        
+                    }
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton5">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont7">
+            <h1>Ejercicio condicional #6: Clasificación del Índice de Masa Corporal (IMC) y Recomendaciones de Salud</h1>
+            <h2>Estructura condicional</h2>
+            <p>Un sistema de salud permite a los usuarios conocer su Índice de Masa Corporal (IMC) y la 
+            categoría en la que se encuentran, ofreciendo además recomendaciones generales: <br>
+            1. El usuario ingresa su peso en kilogramos (kg). <br>
+            2. El usuario ingresa su estatura en metros (m). <br>
+            3. El sistema calcula el IMC utilizando la fórmula: IMC=peso/estatura**2  <br>
+            4. El sistema clasifica al usuario según los siguientes rangos: <br>
+            ○ IMC < 18.5: Bajo peso - Se recomienda consultar a un nutricionista.  <br>
+            ○ 18.5 ≤ IMC < 25: Normal - ¡Mantén un estilo de vida saludable! <br>
+            ○ 25 ≤ IMC < 30: Sobrepeso - Considera realizar más actividad física y mejorar tu dieta. <br>
+            ○ IMC ≥ 30: Obesidad - Es importante buscar asesoramiento médico para un plan de salud integral.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Peso del usuario en kilogramos.</li></p>
+                <p><li>Segundo Dato: Estatura del usuario en metros.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero declaramos las variables necesarias para peso, estatura e IMC. Luego se le explica al usuario que el sistema calculará su Índice de Masa Corporal. Después se piden los datos de peso y estatura. Con esos dos valores se calcula el IMC usando la fórmula peso dividido entre estatura al cuadrado. Una vez obtenido el resultado, se evalúa con una estructura condicional if...else if para determinar en qué rango de salud se encuentra la persona. Dependiendo del valor, se muestra un mensaje que indica si está en bajo peso, normal, sobrepeso u obesidad, junto con una recomendación. Al final se muestra el IMC calculado y el estado de salud correspondiente.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- El valor del IMC. <br>
+                - El estado nutricional y una recomendación general de salud.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
-                </code>
+                function clasificacionSalud (){
+
+                    let peso = 0;
+                    let altura = 0;
+                    let imc = 0;
+
+                    alert("Un sistema de salud permite a los usuarios conocer su Índice de Masa Corporal (IMC) y la categoría en la que se encuentran, ofreciendo además recomendaciones generales:")
+
+                    peso = prompt("Ingrese su peso en Kilogramos (Kg) ")
+                    altura = prompt("Ingrese su estatura en Metros (M)")
+                    imc = peso / (altura * altura)
+
+                    if (imc <= 18.5 ) {
+                        valorImc =  "Bajo peso \nSe recomienda consultar a un nutricionista."
+                    }
+                        else if (imc <= 25) {
+                            valorImc = "Normal \n¡Mantén un estilo de vida saludable!"
+                        }
+                        else if (imc < 30 ) {
+                            valorImc = "Sobrepeso \nConsidera realizar más actividad física y mejorar tu dieta."
+                        }
+                        else (imc >= 30 ) 
+                            valorImc = "Obesidad  \nEs importante buscar asesoramiento médico para un plan de salud integral."
+                        
+
+                alert("Tu Indice de Masa Corporal (IMC) es de " + imc + "\nEl paciente esta: " + valorImc)
+
+                }
+            </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton6">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont8">
+            <h1>Ejercicio condicional #7: Calculadora de Sueldo con Bonificaciones por Hijos en una Empresa </h1>
+            <h2>Estructura condicional</h2>
+            <p>Una empresa calcula el sueldo total de sus empleados considerando un sueldo base y una 
+            bonificación adicional basada en el número de hijos: <br>
+            ● 0 hijos: Sin bono adicional. <br>
+            ● 1 o 2 hijos: Bono del 5% sobre el sueldo base. <br>
+            ● 3 o más hijos: Bono del 10% sobre el sueldo base. <br>
+            El sistema debe solicitar al empleado su sueldo base y el número de hijos que tiene. Luego, calculará el 
+            monto de la bonificación (si aplica) y el sueldo total a pagar. </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Sueldo base del trabajador.</li></p>
+                <p><li>Segundo Dato: Número de hijos del trabajador.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se declaran unas variables que se van a usar más adelante para calcular la bonificación y el sueldo final. Luego el sistema le informa al usuario que la empresa asignará bonificaciones dependiendo de cuántos hijos tenga. Después se piden los datos: el sueldo base y la cantidad de hijos. Dependiendo del número de hijos, se evalúa con condicionales if si tiene 3 o más hijos, si tiene entre 1 y 2, o si no tiene hijos. Si tiene 3 o más, se le da una bonificación del 10%, si tiene al menos 1 hijo se le da una del 5%, y si no tiene hijos no recibe bonificación. La bonificación se calcula sobre el sueldo base y se muestra el valor que se gana por ese extra. Luego se calcula el sueldo final sumando el sueldo base más la bonificación, y al final se muestra el valor total que va a recibir el trabajador.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Monto de la bonificación obtenida (si aplica). <br>
+                - Sueldo final a pagar con bonificación incluida.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
-                </code>
+                function calculadoraSueldo () {
+                    let bonificacion = 0;
+                    let bonificacionObtenida = 0;
+                    let sueldoAPagar = 0;
+
+                // Al incio declaro tres variables que mas adelante utilizare para la formulacion
+
+                    alert("La empresa tiene una nueva forma de generar nuevas bonificaciones salariales, que podrás obtener por la cantidad de hijos que tengas.");
+
+                    let sueldoBase = parseInt(prompt("Ingresa el valor de tu sueldo"));
+                    let numeroHijos = parseInt(prompt("Ingresa la cantidad de hijos que tengas"));
+
+                // Despues declaro dos variables y que al instante se les asigne un valor, que sera dado por el usuario
+
+                    if (numeroHijos >= 3) {
+                        bonificacion = 1.10;
+                        bonificacionObtenida = sueldoBase * (bonificacion - 1)  // Esta formula esta puesta para que me arroje el valor de la bonificacion, y poder tomar ese valor y mostrarlo en el proximo alert
+                        alert("Tendras una bonificacion del 10% que es un total de " + bonificacionObtenida )
+                    } else if (numeroHijos > 0) {
+                        bonificacion = 1.05;
+                        bonificacionObtenida = sueldoBase * (bonificacion - 1)  // Esta formula esta puesta para que me arroje el valor de la bonificacion, y poder tomar ese valor y mostrarlo en el proximo alert
+                        alert("Tendras una bonificacion del 5% que es un total de " + bonificacionObtenida)
+                    } else {
+                        bonificacion = 1.0;
+                        alert("No tendras bonificacion")
+                    }
+
+                // Realizamos tres condicionales, para que, dependiendo de la cantidad de hijos se les asigne una bonificacion 
+
+                    sueldoAPagar = sueldoBase * bonificacion;
+
+                    alert("Tu salario final sera de : " + sueldoAPagar);
+                }
+            </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton7">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont9">
+            <h1>Ejercicio condicional #8: Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de 
+Sangre</h1>
+            <h2>Estructura condicional</h2>
+            <p>Un sistema de un banco de sangre necesita informar a los donantes y receptores sobre las 
+            posibles compatibilidades de donación según el tipo de sangre: <br>
+            ● Tipo de sangre A: Puede donar a A y AB. Puede recibir de A y O. <br>
+            ● Tipo de sangre B: Puede donar a B y AB. Puede recibir de B y O. <br>
+            ● Tipo de sangre AB: Puede donar a AB. Puede recibir de A, B, AB y O (receptor universal). <br>
+            ● Tipo de sangre O: Puede donar a A, B, AB y O (donante universal). Puede recibir de O. <br>
+            El sistema solicitará al usuario que ingrese su tipo de sangre (A, B, AB o O). Utilizando una estructura 
+            switch case, el sistema mostrará a qué tipos de sangre puede donar y de qué tipos puede recibir.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Tipo de sangre del usuario (A, B, AB, O).</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se declara una variable que almacenará el tipo de sangre ingresado por el usuario. El sistema muestra un mensaje explicando que el objetivo es informar sobre la compatibilidad de donación de sangre. Luego se solicita al usuario que escriba su tipo de sangre. Para evitar errores por uso de minúsculas, el dato que se ingresa se convierte a mayúsculas. Después se usa una estructura switch para evaluar el tipo de sangre y, según el valor ingresado, se muestra un mensaje indicando a qué tipos puede donar y de cuáles puede recibir. Si el valor ingresado no coincide con ninguna de las opciones válidas, se muestra un mensaje de error pidiendo que ingrese un tipo válido.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Compatibilidad de donación y recepción del tipo de sangre ingresado.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
-                </code>
+                function clacificacionSangre () {
+
+                    let rh = "";
+
+                    alert("Este algoritmo esta hecho para ejecutar un sistema que te informara a que tipos de sangre podras donar y/o ser receptor, todo para saber las compatibilidades de donacion")
+
+                    rh = prompt("Ingresa tu tipo de sangre \n(A, B, AB, O)").toUpperCase(); // lo que el usuario ingrese y sea en letras minusculas las convertira a mayúscula para evitar errores
+
+                // Despues declaro una variable y que al instante se le asigna un valor, que sera dado por el usuario
+
+                    switch (rh) {
+                        case "A":
+                            alert("Podras donar a A y AB. Puedes recibir de A y O. ")
+                        break;
+                        case "B":
+                            alert("Podras donar a B y AB. Puedes recibir de B y O. ")
+                        break;
+                        case "AB":
+                            alert("Podras donar a AB. Puedes recibir de A, B, AB y O (receptor universal). ")
+                        break;
+                        case "O":
+                            alert("Podras donar a A, B, AB y O (donante universal). Puedes recibir de O. ")
+                        break;
+                        default:
+                            alert("Ingresa un  tipo de sangre valido, nosea pato e ingrese el que es")
+                    }
+                }
+            </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton8">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont10">
+            <h1>Ejercicio condicional #9: Calculadora de Notas con Nivel de Desempeño Detallado en un Curso</h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>En un curso, se evalúa a los estudiantes a través de tres notas parciales. El sistema calculará el 
+            promedio de estas tres notas (cada una entre 0 y 5) y determinará el nivel de desempeño del estudiante 
+            según la siguiente escala:  <br>
+            ● Promedio < 3.0: Nivel Bajo - Requiere reforzar los conocimientos. <br>
+            ● 3.0 ≤ Promedio < 3.9: Nivel Básico - Cumple con los aprendizajes fundamentales. <br>
+            ● 4.0 ≤ Promedio ≤ 4.5: Nivel Alto - Demuestra un buen dominio de los contenidos. <br>
+            ● Promedio > 4.5: Nivel Superior - Alcanza un desempeño sobresaliente.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Tres notas ingresadas por el usuario, cada una entre 0 y 5.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se muestra un mensaje explicando que el sistema calculará el promedio de tres notas y luego determinará el nivel de desempeño del estudiante. Se declara una variable que servirá para acumular la suma total de las notas. Se utiliza un ciclo que se repite tres veces para pedirle al usuario las tres notas. Antes de aceptar la nota, se valida que esté en el rango entre 0 y 5. Si la nota es válida, se suma al total y se pasa a la siguiente. Si no es válida, se muestra un mensaje de error y no avanza hasta que se ingrese una nota correcta.
+                Luego de ingresar las tres notas válidas, se calcula el promedio dividiendo la suma total entre 3. Dependiendo del resultado, se evalúa una serie de condicionales que clasifican el desempeño del estudiante en diferentes niveles: bajo, básico, alto o superior. Al final, se muestra un mensaje que incluye el promedio, el nivel alcanzado y una breve descripción del resultado.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Promedio de las tres notas. <br>
+                - Nivel de desempeño del estudiante. <br>
+                - Mensaje descriptivo sobre su resultado.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                function calculoNotas () {
+                    
+                    alert("Este algoritmo se usara para calcular el promedio de tres notas (cada una entre 0 y 5) y determinará el nivel de desempeño del estudiante según la siguiente escala: ")
+
+                    let total = 0;
+
+                    // Reutilizamos el bucle for que usamos en el primer ejercicio, ahora se repitira 3 veces (una por cada nota)
+                    for (let i = 0; i < 3; ) {
+                        let nota = parseFloat(prompt("Ingresa la nota número " + (i + 1))); // Pedimos la nota al usuario
+                        if (nota >= 0 && nota <= 5) {                                       // Verificamos que la nota sea válida (entre 0 y 5)
+                            total = total + nota; // sumamos la nota al total, esto lo hacemos gracias a que cada vez que agreguemos una nota se sumara a la anterior que se agrego
+                            i++; // solo aumentamos si la nota fue válida
+                        } else {
+                            alert("Nota inválida. Debe estar entre 0 y 5."); // mensaje de error
+                        }
+                    }
+
+                    // Calculamos el promedio de las notas
+                    let promedio = total / 3;
+                    let nivelDesempeno = "";
+                    let mensajeDescriptivo = "";
+
+                    // Determinamos el nivel de desempeño según la escala
+                    if (promedio < 3.0) {
+                        nivelDesempeno = "Nivel Bajo";
+                        mensajeDescriptivo = "Requiere reforzar los conocimientos.";
+                    } else if (promedio >= 3.0 && promedio < 3.9) {
+                        nivelDesempeno = "Nivel Básico";
+                        mensajeDescriptivo = "Cumple con los aprendizajes fundamentales.";
+                    } else if (promedio >= 4.0 && promedio <= 4.5) {
+                        nivelDesempeno = "Nivel Alto";
+                        mensajeDescriptivo = "Demuestra un buen dominio de los contenidos.";
+                    } else { // promedio > 4.5
+                        nivelDesempeno = "Nivel Superior";
+                        mensajeDescriptivo = "Alcanza un desempeño sobresaliente.";
+                    }
+
+                    // Mostramos el resultado final al usuario
+                    alert(
+                        "Promedio de las notas: " + promedio + "\nNivel de Desempeño: " + nivelDesempeno + "\nMensaje: " + mensajeDescriptivo);
+
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton9">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont11">
+            <h1>Ejercicio condicional #10: Descuento por Tipo de Cliente en una Tienda con Detalles de la Compra</h1>
+            <h2>Estructura condicional</h2>
+            <p> Una tienda aplica diferentes descuentos a sus clientes según su tipo, buscando fidelizar a los 
+            clientes frecuentes y VIP. El sistema debe solicitar al usuario el tipo de cliente ("nuevo", "frecuente" o "vip") 
+            y el valor total de su compra.  <br>
+            ● Cliente nuevo: 5% de descuento.  <br>
+            ● Cliente frecuente: 10% de descuento. <br>
+            ● Cliente VIP: 20% de descuento. <br>
+            Utilizando una estructura switch case, el sistema calculará el descuento aplicable, el valor del 
+            descuento y el valor total a pagar por el cliente. Si el tipo de cliente ingresado no es válido, se mostrará un 
+            mensaje de error.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Tipo de cliente (nuevo, frecuente o vip).</li></p>
+                <p><li>Segundo Dato: Valor total de la compra.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Se inicia mostrando un mensaje que explica al usuario que el sistema calculará un descuento según el tipo de cliente. Luego, el programa solicita el tipo de cliente y convierte el texto ingresado a minúsculas para evitar errores por el uso de mayúsculas. Después se pide el valor total de la compra y se valida que sea un número válido.
+                Si el tipo de cliente es reconocido (nuevo, frecuente o vip), se le asigna un porcentaje de descuento correspondiente. Con ese porcentaje, se calcula el valor del descuento y el valor final que el cliente debe pagar. Finalmente, se muestra un resumen con todos los datos importantes: tipo de cliente, valor de la compra, porcentaje de descuento aplicado, monto descontado y el total a pagar.
+                Si el usuario ingresa un tipo de cliente no válido o un valor de compra incorrecto, el sistema lo notifica con un mensaje de error y no continúa con el cálculo.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Tipo de cliente. <br>
+                - Valor de la compra. <br>
+                - Porcentaje de descuento aplicado. <br>
+                - Monto descontado. <br>
+                - Valor total a pagar.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
-                </code>
+                function descuentoCliente () {
+
+                    alert("Este algoritmo ayudara a una tienda a que aplique diferentes descuentos a sus usuarios según su tipo de cliente, este sistema solicitara al usuario el tipo de cliente que es nuevo, frecuente o vip y el valor total de su compra. ")
+
+                    // Solicitamos el tipo de cliente
+                    const tipoCliente = prompt("Ingrese el tipo de cliente ('nuevo', 'frecuente' o 'vip'):").toLowerCase(); //.tolowerCase sirve para que el usuario al ingresar una letra o una palabra en mayuscula la convertira ese texto en minusculas
+
+                    // Solicitamos el valor de la compra
+                    const valorCompra = parseFloat(prompt("Ingrese el valor total de su compra:"));
+
+                    // Validamos que el valor de la compra sea un número válido
+                    if (isNaN(valorCompra)) {
+                        alert("Error: El valor de la compra ingresado no es válido.");
+                        return; // Salimos de la función si el valor de la compra no es válido
+                    }
+
+                    let porcentajeDescuento = 0;
+                    let valorDescuento = 0;
+                    let valorTotalPagar = valorCompra;
+
+                    // Utilizamos la estructura switch case para determinar el descuento según el tipo de cliente 
+                    switch (tipoCliente) {
+                        case "nuevo":
+                            porcentajeDescuento = 0.05;
+                            descuento = 5
+                            break;
+                        case "frecuente":
+                            porcentajeDescuento = 0.10;
+                            descuento = 10
+                            break;
+                        case "vip":
+                            porcentajeDescuento = 0.20;
+                            descuento = 20
+                            break;
+                        default:
+                            alert("Error: El tipo de cliente ingresado no es válido.");
+                            return; // Salimos de la función si el tipo de cliente no es reconocido
+                    }
+
+                    // Calculamos el valor del descuento si el tipo de cliente es válido
+                    if (porcentajeDescuento > 0) {
+                        valorDescuento = (valorCompra * porcentajeDescuento);
+                        valorTotalPagar = valorCompra - valorDescuento;
+
+                        // Mostramos los detalles de la compra al cliente
+                        alert(
+                            "Tipo de Cliente: " + tipoCliente + "\n" + "Valor de la Compra: $" + valorCompra + "\n" + "Porcentaje de Descuento: " + descuento + "%\n" + "Monto del Descuento: $" + valorDescuento + "\n" +"Valor Total a Pagar: $" + valorTotalPagar
+                        );
+                    }
+
+                }
+            </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton10">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont12">
+            <h1>Ejercicio #11: Contador de Números Positivos y Negativos</h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>El sistema debe permitir ingresar una serie de números hasta que el usuario introduzca el 
+            número 0. Por cada número, debe contar cuántos positivos y cuántos negativos se han ingresado 
+            (excluyendo el cero).</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Números ingresados por el usuario (de uno en uno) hasta que ingrese el número 0.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se muestra un mensaje explicando que se podrán ingresar números hasta digitar el 0. Luego el programa pide un número al usuario y guarda ese valor.
+                Si el número es distinto de 0, entra en un ciclo while que se repetirá hasta que se ingrese el 0. En cada iteración, el programa verifica si la entrada es un número válido. Si lo es, comprueba si el número es positivo o negativo y aumenta el contador correspondiente. Si la entrada no es válida (no es un número), muestra un mensaje de error y vuelve a pedir el dato.
+                Este ciclo se repite hasta que el usuario digita 0, lo que significa que ya no quiere ingresar más números. Finalmente, el sistema muestra cuántos números positivos y negativos fueron ingresados.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Total de números positivos ingresados. <br>
+                - Total de números negativos ingresados.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
             <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                function numerosPositivosNegativos () {
+
+                    alert("Este sistema debera permitir ingresar una serie de números hasta que el usuario introduzca el número 0. Por cada número, debe contar cuántos positivos y cuántos negativos se han ingresado (excluyendo el cero).")
+
+                    let numero = parseFloat(prompt("Ingrese un número:"));
+                    let positivos = 0;
+                    let negativos = 0;
+
+                    // El bucle continúa mientras el número ingresado no sea 0
+                    while (numero !== 0) {
+                        if (!isNaN(numero)) { // Verificamos que la entrada sea un número
+                            if (numero > 0) {
+                                positivos ++; // Incrementamos el contador de positivos, no se por que, pero si no uso el ++ no me aumenta el contador :/
+                            } else if (numero < 0) {
+                                negativos ++;
+                            }
+                        } else {
+                            alert("Entrada inválida. Por favor, ingrese un número.");
+                        }
+                        numero = parseFloat(prompt("Ingrese otro número (0 para terminar):")); // Pedimos el siguiente número
+                    }
+
+                    // Mostramos el resultado final
+                    alert(
+                        "Total de números positivos ingresados: " + positivos + "\n" + "Total de números negativos ingresados: " + negativos
+                    );
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton11">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont13">
+            <h1>Ejercicio #12: Validador de Contraseña con Intentos Limitados</h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>El sistema permite al usuario ingresar su contraseña hasta 3 intentos. Si la contraseña correcta 
+            es "s3cret0", debe mostrar un mensaje de bienvenida. Si falla en los 3 intentos, debe bloquear el acceso.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Contraseña ingresada por el usuario.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se define la contraseña correcta y se establece un límite de intentos. Luego se muestra un mensaje informando al usuario que tiene 3 oportunidades para ingresar la clave.
+                Después se inicia un ciclo while que se repite mientras no se haya superado el número máximo de intentos y el acceso siga estando permitido. En cada vuelta, el programa solicita al usuario que ingrese una contraseña.
+                Si la contraseña ingresada es exactamente igual a la contraseña correcta, se muestra un mensaje de bienvenida y se cambia una bandera que detiene el bucle.
+                Si la contraseña no es correcta, se incrementa el contador de intentos y se le informa al usuario cuántos intentos le quedan.
+                Si se completan los 3 intentos sin éxito, se muestra un mensaje informando que la cuenta ha sido bloqueada.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Mensaje de bienvenida si la contraseña es correcta. <br>
+                - Advertencia sobre los intentos restantes. <br>
+                - Aviso de cuenta bloqueada si se fallan los 3 intentos./p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                function validadorContraseñas () {
+
+                    const contrasenaCorrecta = "s3cret0";
+                    const maxIntentos = 3;
+                    let intentos = 0;
+                    let accesoPermitido = true;
+
+                    alert("Sistema de acceso. Tienes " + maxIntentos + " intentos para ingresar la contraseña.");
+
+                    while (intentos < maxIntentos && accesoPermitido) {  // Este bucle 'while' sigue funcionando mientras no se acaben los intentos Y no haya entrado.
+                        const contrasenaIngresada = prompt("Intento " + (intentos + 1) + ": Ingresa la contraseña:");
+                        if (contrasenaIngresada === contrasenaCorrecta) {  // utilizamo el siguiente operador de comparacion '===' para que sea exactamente igual el tipo y el valor.
+                            alert("¡Bienvenido!");
+                            accesoPermitido = !true;  // Cambiamos la bandera a 'true' para que el bucle se detenga en la siguiente vuelta.
+                        } else {
+                            intentos++;
+                            if (intentos < maxIntentos) {
+                                alert("Contraseña incorrecta. Te quedan " + (maxIntentos - intentos) + " intentos.");
+                            }
+                        }
+                    }
+
+                    // Verificamos si se agotaron los intentos sin éxito
+                    if (accesoPermitido) {
+                        alert("Cuenta bloqueada por intentos fallidos.");
+                    }
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton12">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont14">
+            <h1>Ejercicio #13: Acumulador de Compras hasta Monto Límite</h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>Un cliente puede ingresar el valor de productos que va comprando. El sistema acumula los 
+            valores hasta llegar o superar los $100.000, momento en el cual termina y muestra el total y la cantidad de 
+            productos comprados. </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Valor individual de cada producto ingresado por el usuario.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero se muestran instrucciones al usuario explicando que podrá ir ingresando el valor de los productos que va comprando.
+                Se inicializan dos variables: una para acumular el total de la compra y otra para contar la cantidad de productos comprados.
+                Luego se utiliza un bucle while que se repite mientras el total de la compra sea menor o igual a $100.000.
+                Dentro del ciclo, se le pide al usuario que ingrese el valor de un producto. Si el valor ingresado es un número válido y mayor a cero, se suma al total acumulado y se incrementa el contador de productos.
+                Si el valor es igual a 0 o negativo, se muestra un mensaje indicando que debe ingresar un número mayor que cero.
+                También se muestra un mensaje con el total acumulado actual (aunque esto podría considerarse opcional o innecesario).
+                Cuando el total acumulado supera los $100.000, el ciclo termina y se muestra un resumen con el monto total acumulado y la cantidad de productos comprados.
+</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Total acumulado de la compra. <br>
+                - Cantidad de productos comprados.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                function comprasMontoLimite () {
+
+                    alert(" Como usuario podras ingresar el valor de los productos que vas comprando. El sistema acumula los valores hasta llegar o superar los $100.000, momento en el cual termina y muestra el total y la cantidad de productos comprados.")
+
+                    let totalCompra = 0;
+                    let cantidadProductos = 0;
+
+                    // El bucle continúara mientras el total de la compra sea menor a $100.000
+                    while (totalCompra <= 100000) {
+                        const valorProducto = parseFloat(prompt("Ingrese el valor del siguiente producto:"));
+
+                        if (!isNaN(valorProducto)) { // Verificamos si el usuario ingresó un valor numérico válido
+                            if (valorProducto > 0) { // Ese valor que ingrese el usuario tendra que se mayo a 0
+                                totalCompra = valorProducto + totalCompra; // Cada ciclo que de el bucle se sumara el valor del anteriori producto con el nuevo hasta llegar a menor o igual $100.000
+                                cantidadProductos++;  //Cada ciclo que de el bucle se sumara +1 en la vaariable cantidadProductos
+                            } else if (valorProducto === 0) { // por si el ususario quiere ponerse chistosito
+                                alert("Ingresó 0. Debe ingresar numeros mayores a 0.");
+                            } else {
+                                alert("El valor del producto debe ser positivo."); // por si el ususario quiere ponerse chistosito
+                            }
+                        } else {
+                            alert("Entrada inválida. Por favor, ingrese un valor numérico.");
+                        }
+
+                        // Mostramos el total actual para que el usuario sepa cuánto falta (estoy pensando que es completamente ineccesario ._.)
+                        alert("Total actual de la compra: $" + totalCompra);
+                    }
+
+                    // Mostramos el resultado final
+                    alert("Monto total acumulado de la compra: $" + totalCompra + "\n" + "Cantidad de productos comprados: " + cantidadProductos);
+                }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton13">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont15">
+            <h1>Ejercicio #14: Ingreso de Estudiantes hasta Cupo Máximo </h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>Un sistema educativo debe registrar estudiantes hasta completar un cupo máximo de 30 personas o hasta que el usuario decida detener el ingreso con una palabra clave ("fin").</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Nombres de los estudiantes que se desean registrar.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>El sistema inicia mostrando un mensaje explicando que se podrán registrar estudiantes hasta llegar al límite de 30 o hasta que el usuario escriba la palabra clave "fin". Se define un cupo máximo de 30 estudiantes, un contador para llevar la cantidad registrada y un arreglo donde se guardarán los nombres. Luego, se inicia un bucle que se repite mientras no se haya alcanzado el cupo máximo. En cada ciclo, el sistema solicita el nombre del estudiante. <br>
+                    - Si el usuario escribe "fin", el sistema interrumpe el proceso de registro. <br>
+                    - Si el usuario escribe un valor numérico (positivo o negativo), se muestra un mensaje de error. Aunque no se hace una validación perfecta de que sea solo texto, se intenta evitar que ingresen números. <br>
+                    - Si el nombre no está vacío (luego de quitar los espacios con .trim()), se agrega a la lista de nombres y se incrementa el contador. <br>
+                    - Si no se cumple ninguna condición válida, se le pide al usuario que ingrese un nombre correcto. <br>
+                Una vez se completa el registro (por límite o por decisión del usuario), se muestra cuántos estudiantes se registraron. Después, se genera una lista con los nombres y se muestra al usuario en una alerta. Si no se registró ningún estudiante, también se notifica.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Cantidad de estudiantes registrados. <br>
+                - Lista con los nombres ingresados.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function ingresoEstudiantes () {
+
+                        alert("Un sistema educativo registrara estudiantes hasta completar un cupo máximo de 30 personas o hasta que el usuario decida detener el ingreso con una palabra clave (fin). ")
+
+                        const cupoMaximo = 30;
+                        let cantidadEstudiantes = 0;
+                        let listaNombresEstudiantes = [];
+
+
+                        while (cantidadEstudiantes < cupoMaximo) {
+                            let nombreEstudiante = prompt("Ingrese el nombre del estudiante número " + (cantidadEstudiantes + 1) + " (o 'fin' para detener):");
+
+
+                            if (nombreEstudiante.toLowerCase() === "fin") { //.tolowerCase sirve para que el usuario al ingresar una letra o una palabra en mayuscula la convertira ese texto en minusculas
+                                alert("Registro de estudiantes detenido por el usuario.");
+                                break; // Condicioanal para que el usuario al ingresar la palabra clave "fin" termine el bucle o darle a cancelar en la ventana emergente
+                            } else if (nombreEstudiante > 0) {  // Agregue estas dos condicionales para evitar que ingresen valores numericos, no se como evitar que agreguen numeros o valores diferentes al alfabeto en cualquier parte del nombre :(
+                                alert("No puedes ingresar un valor numerico")
+                            } else if (nombreEstudiante < 0) {
+                                alert("No puedes ingresar un valor numerico")
+                            } else if (nombreEstudiante.trim() !== "") { //.trim sirve para elminar los espacios en blanco a lo que ingrese el usuario en el caso que el solo ingrese espacios,
+                                listaNombresEstudiantes.push(nombreEstudiante.trim()); // Agregamos el nombre a la lista,  la verdad esta monda toco con gemini, me tenia mamado
+                                cantidadEstudiantes++;
+                                alert("Estudiante '" + nombreEstudiante + "' registrado. Total estudiantes: " + cantidadEstudiantes);
+                            } else {
+                                alert("Por favor, ingrese un nombre válido.");
+                            }
+                        }
+
+                            alert("Registro de estudiantes finalizado. Se registraron " + cantidadEstudiantes + " estudiantes.");
+
+                        let lista = '';
+                        for (let i = 0; i < listaNombresEstudiantes.length; i++) {
+                            lista += (i + 1) + ". " + listaNombresEstudiantes[i] + "\n";
+                            }
+
+
+                            // Mostramos la lista de estudiantes al final
+                            if (listaNombresEstudiantes.length > 0) {
+                                alert("Lista de estudiantes registrados:\n" + lista);
+                            } else {
+                                alert("No se registró ningún estudiante.");
+                            }
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton14">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont16">
+            <h1>Ejercicio #15: Cajero Electrónico con Operaciones de Retiro y Transferencia </h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>Simula un cajero electrónico donde el sistema inicia con un saldo aleatorio entre $1.000.000 y $5.000.000. El usuario puede hacer retiros (restando al saldo) o transferencias entrantes (sumando al saldo). El sistema debe validar que los retiros no excedan el saldo disponible. Luego de cada operación, se pregunta si desea realizar otra transacción. Si el saldo llega a cero, solo se permiten transferencias.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Opciones del menú (retirar, ingresar o salir).</li></p>
+                <p><li>Segundo Dato: Monto para retirar o ingresar.</li></p>
+                <p><li>Tercer Dato: Transferencia si el saldo es $0.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>El algoritmo inicia generando un saldo aleatorio entre $1 y $5.000.000 para simular el saldo actual del usuario en un cajero. Ese saldo inicial se muestra formateado con separadores de miles al estilo colombiano (sin decimales). Luego entra en un bucle que solo se detendrá si el usuario decide salir voluntariamente (opción 3 o cancelando el prompt). Si el saldo es exactamente cero, el sistema solo permitirá ingresar dinero (una especie de "transferencia"). El usuario debe escribir un monto válido mayor que 0. Si lo hace, el sistema lo suma al saldo. Si no, lanza una alerta de error y vuelve a intentar. 
+                Cuando el saldo es mayor que cero, el sistema le pregunta al usuario qué desea hacer: <br>
+                1. Retirar dinero. <br>
+                2. Ingresar dinero. <br>
+                3. Salir. <br>
+                Después de seleccionar una opción, el usuario debe ingresar el monto. Si el monto es inválido (no numérico o menor o igual a cero), se lanza un mensaje de error. Dependiendo de la opción elegida: <br>
+                - Opción 1 (Retirar): Si el monto es menor o igual al saldo disponible, se descuenta del saldo y se notifica al usuario. Si el monto es mayor, se muestra un mensaje de “Sin fondos”. <br>
+                - Opción 2 (Ingresar): Se suma el monto al saldo y se notifica al usuario. <br>
+                - Opción inválida: Se informa que la opción no es válida. <br>
+                Este ciclo se repite hasta que el usuario elige salir. Finalmente, cuando se sale del bucle, se muestra un mensaje de despedida agradeciendo por usar el cajero.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Saldo actual. <br>
+                    - Resultados de retiro o ingreso (éxito o error). <br>
+                    - Despedida.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function cajeroElectronico () {
+                        
+                        let saldo = Math.floor(Math.random() * 5000000) + 1; // Creamos una variable que en su interior tenga math.floor que asegura que el numero que nos genere  sea un numero entero y math.random es aquel que nos entregara un numero aleatorio en los rangos que nosotros escogamos
+
+                        // Muestra una alerta de bienvenida con el saldo inicial formateado como moneda colombiana sin decimales.
+                        alert(`¡Hola! Saldo: $${saldo.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`); //Usamos el ${} para que se tome lo adentro de las llavees como codigo de javascript para que se ejecute y nos de un valor sin decimales y nos lo de como vemos la moneda corriente aqui en colombia
+                        while (true) {
+                            // Si el saldo es exactamente cero mostrara un mensaje indicando que solo se permiten transferencias entrantes.
+                            if (saldo === 0) {
+                                const ingresoStr = prompt("Saldo $0. Transferir (o 'no'):");
+                                if (!ingresoStr || ingresoStr.toLowerCase() === 'no') break; // Si el usuario ingresa algun valor string lo pasara a minusculas y si es 'no' sale del bucle y terminara el programa
+                                const ingreso = parseFloat(ingresoStr); // Intentara convertir la entrada del usuario a un número decimal, si la conversión es exitosa y el monto es mayor que cero suma el monto al saldo. si no, muestra un mensaje de monto inválido.
+                                if (ingreso > 0) saldo += ingreso;
+                                else alert("Monto inválido.");
+                                alert(`Nuevo saldo: $${saldo.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`);
+                                continue;
+                            }
+
+                            const opcion = prompt("1. Retirar\n2. Ingresar\n3. Salir"); // Si el saldo no es cero, preguntara al usuario qué desea hacer.
+                            if (opcion === '3' || opcion === null) break;    // Si el usuario elige '3' (salir) o cancela el prompt (opcion === null), sale del bucle.
+
+                            const monto = parseFloat(prompt(opcion === '1' ? "Retirar:" : "Ingresar:")); // Solicitara el monto a retirar o ingresar según la opción elegida Si el monto ingresado no es un número válido o es menor o igual a cero muestra un mensaje de monto inválido.
+                            if (isNaN(monto) || monto <= 0) {
+                                alert("Monto inválido.");
+                                continue;
+                            }
+
+                            // Utiliza una estructura switch para realizar la acción según la opción elegida.
+                            switch (opcion) {
+                                case '1': // Opción para retirar si el monto a retirar es menor o igual al saldo, resta el monto del saldo; de lo contrario, el saldo permanece igual.
+                                if (monto <= saldo) {
+                                    saldo = saldo - monto;
+                                    alert(`Retiro exitoso. Saldo: $${saldo.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`);
+                                } else {
+                                    alert("Sin fondos.");
+                                }
+                                break;
+                                case '2': // Opción para ingresar la cual sumara el monto ingresado al saldo.
+                                    saldo += monto;
+                                    alert(`Ingreso exitoso. Saldo: $${saldo.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`);
+                                    break;
+                                default: 
+                                    alert("Opción inválida.");
+                            }
+                        }
+
+                        // Muestra un mensaje de agradecimiento al finalizar la interacción.
+                        alert("Gracias por usar el cajero.");
+
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton15">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
+        <section id="cont17">
             <h1>2. Título o nombre del algoritmo</h1>
             <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
             <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
@@ -995,12 +1571,7 @@
         </ul>
         <p class="copyright">&copy; 2025 Tus Nombres - Web Developer</p>
     </footer>
-
-
-
     <script src="js/mainn.js"></script>
     <script src="js/scripts.js"></script>
-
 </body>
-
 </html>
