@@ -828,9 +828,6 @@ function encuestaSatisfaccion () {
         else{
         alert("La satisfaccion general es negativa teniendo en cuenta el resultado de:  " + promedio)
         }
-
-
-
 }
 
 // Ejercicio arreglo #4: Análisis de temperaturas semanales Descripción: Se proporciona un arreglo con las temperaturas registradas durante una semana: [22, 24, 21, 23, 25, 26, 22]. El programa debe calcular la temperatura promedio, mostrar la más alta, la más baja, y cuántos días superaron los 23 grados.

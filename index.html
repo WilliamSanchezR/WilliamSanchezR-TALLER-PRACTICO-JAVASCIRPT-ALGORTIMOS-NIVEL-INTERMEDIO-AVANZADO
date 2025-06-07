@@ -1147,240 +1147,385 @@ Sangre</h1>
             <hr>
         </section>
         <section id="cont17">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <h1>Ejercicio #16: Tabla de Multiplicar Personalizada</h1>
+            <h2>Estructura bucle</h2>
+            <p>El usuario ingresa un número y el sistema imprime su tabla de multiplicar del 1 al 20.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Un número ingresado por el usuario</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Este algoritmo comienza mostrando un mensaje de bienvenida que informa al usuario que se generará la tabla de multiplicar del número que él elija, hasta el 20. Luego, el sistema le solicita al usuario que escriba un número. Este valor se convierte a decimal por si el usuario llegara a ingresar un número con coma. Después, se declara una variable vacía llamada resultado. Esta variable servirá como contenedor para ir guardando todas las líneas de la tabla de multiplicar.
+                Se utiliza un bucle for que se repite desde el número 1 hasta el 20. En cada repetición, el sistema calcula el producto del número ingresado por el usuario y el valor actual del contador (i). Luego, ese resultado se añade a la variable resultado, que va acumulando las líneas de la tabla.Una vez que el bucle termina (es decir, se han generado los 20 resultados), el sistema muestra toda la tabla junta en un solo mensaje de alerta.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>Tabla completa de multiplicar del número ingresado, desde 1 hasta 20.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function tablaMultiplicar () {
+
+                        alert("Este sistema genera la tabla de multiplicacion de un numero hasta 20")
+
+                    let numero = parseFloat(prompt('Ingrese un numero por favor')) // Le pedimos al usuario que ingrese el valor que el desea
+                    let resultado = ''  // Creamos una variable que este vacia con las '' para mas adelante agregar informacion a ese espacio 
+                        for(let i = 1 ; i <= 20 ; i = i + 1){  
+                            resultado += numero + ' x ' + i + ' = ' + (numero * i) + '\n' // Generamos el for que se repetira 20 veces, en cada bucle "resultado +=..." alimentara la lista las veces que se repita el bucle 
+                    }
+                    alert('Los multiplos del numero # ' + numero + ' son:\n'+ resultado
+                    )
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton16">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont18">
+            <h1>Ejercicio #17: Suma de los Primeros N Números Naturales</h1>
+            <h2>Estructura de bucle</h2>
+            <p> El usuario indica cuántos números quiere sumar (ej: 5) y el sistema calcula la suma de 1 + 2 + 3 + ... + N.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Un número entero positivo que el usuario ingresa y representa cuántos números naturales quiere sumar.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Este algoritmo inicia con un mensaje que informa al usuario que se va a calcular la suma de los primeros números naturales, desde 1 hasta el número que él elija. Luego, el sistema le pide al usuario que escriba un número entero positivo. Este valor se convierte a número entero con parseInt, se realiza una validación para asegurarse de que el valor ingresado sea realmente un número y que además sea mayor que cero. Si el dato no es válido, se muestra un mensaje de alerta y el programa se detiene, si el valor ingresado es correcto, se inicializan dos variables: <br>
+                    - Una llamada suma, que comienza en 0 y se encargará de acumular el total. <br>
+                    - Otra llamada secuencia, que será una cadena vacía y se usará para mostrar la secuencia visual de la suma (como "1 + 2 + 3 + ..."). <br>
+                Luego, se utiliza un bucle for que comienza en 1 y se repite hasta llegar a N. En cada vuelta del bucle: Se va sumando el número actual a la variable suma, y se va armando la cadena secuencia con el número actual seguido de un " + " si aún no es el último número.
+                Finalmente, una vez completada la suma, el sistema muestra un mensaje indicando la secuencia sumada y el resultado total.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- La secuencia de suma (por ejemplo: "1 + 2 + 3 + 4 + 5"). <br>
+                - El resultado de esa suma (por ejemplo: "15").</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function sumaNaturales () {
+
+                        alert("Este algoritmo sumara los primeros numeros naturales. El usuario indica cuántos números quiere sumar (ej: 5) y el sistema calcula la suma de 1 + 2 + 3 + ... + N.")
+                        const N = parseInt(prompt('Ingrese un entero positivo para sumar los primeros N naturales:'));
+                        if (isNaN(N) || N <= 0) return alert("Ingrese un entero positivo válido."); // Condicional que verifica que el valor ingresado sea un valor numerico y sea meno a cero, de no cumplirse arrojara el alert y cancelara la operacion.
+
+                        let secuencia = ''; // Creamos un variable con un espacio vacio para que sea utilizado para llevar acabo la suma de los numeros naturales 
+                        let suma = 0;   
+                        for (let i = 1; i <= N; i++) {
+                            suma += i;
+                            secuencia += i + (i < N ? ' + ' : ''); // En esta linea de codigo, hacemos que tome el numero actual y lo convierte en una cadena de texto y lo añade a la cadena "secuencia", luego verifica si i es menor a N si se cumple se agrega a la cadena "+" si no se llega a cumplir agrega un valor vacio ""
+                        }
+
+                        alert(`La suma de los primeros ${N} naturales (${secuencia}) es: ${suma}`);
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton17">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont19">
+            <h1>Ejercicio #18: Contador de Caracteres en Palabras </h1>
+            <h2>Estructura de bucle</h2>
+            <p>El usuario indica cuántas palabras ingresará. Por cada una, el sistema muestra cuántos caracteres tiene. </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Un número entero que indica cuántas palabras se van a ingresar.</li></p>
+                <p><li>Segundo Dato: Las palabras que el usuario va escribiendo, una por una.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Este algoritmo comienza mostrando un mensaje que explica su funcionamiento: contar cuántos caracteres tiene cada palabra que el usuario escriba, despues, el sistema le pregunta al usuario cuántas palabras quiere ingresar.una vez se recibe ese número, se ejecuta un bucle for, que se repetirá la misma cantidad de veces que el número ingresado. En cada repetición, se le pide al usuario que escriba una palabra. El sistema mide cuántos caracteres tiene esa palabra usando .length, que es una función que cuenta la cantidad de letras, símbolos o espacios en una cadena. Luego, muestra una alerta informando cuántos caracteres tiene esa palabra, este proceso se repite hasta completar todas las palabras.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>Para cada palabra ingresada, muestra su cantidad de caracteres.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function contadorCaracteres () {
+
+                        alert("Este algoritmo funcionara para contar el numero de caracteres que hay en cada palabra que ingreses, ahora bien el usuario debera ingresar el numero de palabras que a posteriori ingresara")
+
+                            let numeroPalabras = parseInt(prompt("¿Cuantas palabras desea ingresar?"));
+
+                        for(let i = 1; i <=numeroPalabras; i = i + 1){
+
+                            let palabra = prompt("Ingrese la palabra #" + i + ":");
+                            let cantidadCaracteres = palabra.length;
+
+                            alert("La palabra: " + palabra + "\n tiene un total de " + cantidadCaracteres + " caracteres.");
+                        }
+
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton18">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont20">
+            <h1>Ejercicio #19: Generador de Secuencia de Números Pares</h1>
+            <h2>Estructura condicional y bucle</h2>
+            <p>El sistema genera y muestra los primeros N números pares (empezando desde 2). </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Un número entero positivo ingresado por el usuario, que indica cuántos números pares se desean generar.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero le mostramos al usuario un mensaje en el que le decimos que este sistema generará los primeros N números pares, empezando desde el 2. Luego, le pedimos que ingrese un número entero positivo que indique cuántos números pares desea obtener. Una vez que el usuario ingresa ese número, verificamos que realmente se trate de un número y que sea mayor que cero; si no lo es, mostramos un mensaje de error y detenemos la operación. Si el número es válido, creamos una variable vacía que usaremos para ir acumulando la lista de números pares. Utilizamos un bucle que se repetirá tantas veces como el número que el usuario indicó. En cada vuelta del bucle, multiplicamos el contador actual por 2 para obtener el número par correspondiente (por ejemplo, en la primera iteración 1×2=2, en la segunda 2×2=4, etc.). Cada uno de esos números se va añadiendo a la variable de resultado, separándolos con un salto de línea para mantener el formato.
+                Finalmente, cuando el bucle ha terminado, mostramos un mensaje al usuario con la lista completa de los números pares generados, para que pueda ver de forma ordenada el resultado obtenido.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>Una lista con los primeros N números pares.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function generadorPares () {
+                        alert("Este sistema genera y mostrara los primeros N números pares (empezando desde 2)")
+
+                        const cantidadPares = parseInt(prompt('¿Cuántos números pares desea (empezando desde 2)?'));
+                        if (isNaN(cantidadPares) || cantidadPares <= 0) return alert("Ingrese un entero positivo válido."); // Condicional que verifica que el valor ingresado sea un valor numerico y sea menor a cero, de no cumplirse arrojara el alert y cancelara la operacion.
+
+                        let resultado = ''; // Creamos un variable con un espacio vacio para que sea utilizado para llevar acabo la lista de numero pares generados 
+                        for (let i = 1; i <= cantidadPares; i++) {
+                            resultado += (i * 2) + '\n'; // // En esta linea de codigo, hacemos que tome el valor del contador para que lo multiplique por dos y nos de el numero par y lo convierte en una cadena de texto y lo añade a la cadena.
+                        }
+
+                        alert(`Los primeros ${cantidadPares} números pares son:\n${resultado}`);
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton19">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont21">
+            <h1>Ejercicio arreglo #20: Registro de notas y cálculo del promedio general</h1>
+            <h2>Estructura condicional y bucle con manejo de arreglos</h2>
+            <p>El sistema solicita ingresar el nombre de un estudiante y luego permite registrar las notas de 5 materias. Al finalizar, muestra cada materia con su respectiva nota y calcula el promedio general. Si alguna nota es inferior a 3.0, el estudiante queda en riesgo académico.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Nombre del estudiante</li></p>
+                <p><li>Segundo Dato: Nombres de 5 materias</li></p>
+                <p><li>Tercer Dato: Notas de 5 materias</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero, se muestra un mensaje inicial para que el usuario sepa qué hará el programa. Después, se le pide al usuario el nombre del estudiante, que se guarda en una variable. Acto seguido, se preparan dos listas vacías: una para almacenar los nombres de las materias y otra para guardar sus respectivas notas.
+                Luego, el programa entra en un ciclo que se repetirá cinco veces, una por cada materia. En cada repetición, se le pide al usuario el nombre de la materia y su nota. Es importante mencionar que la nota se convierte a un número para poder hacer cálculos con ella. Una vez ingresados, el nombre de la materia se añade a la lista de materias y la nota a la lista de notas.
+                Una vez que se han registrado todas las materias y notas, el programa inicia otro ciclo para revisar cada materia individualmente. Aquí, se compara la nota de cada materia con el valor 3. Si la nota es menor a 3, se muestra un mensaje indicando que el estudiante está en riesgo académico en esa materia. Si la nota es 3 o mayor, se informa que el estudiante está bien en esa materia.
+                Finalmente, el programa procede a calcular el promedio general. Para ello, se inicializa una variable para la suma en cero. Después, se recorre la lista de notas y se van sumando todas. Cuando la suma está completa, se divide por el total de notas (que son 5) para obtener el promedio. Con este promedio calculado, se realiza una última comprobación: si el promedio es menor a 3, se le comunica al usuario que el estudiante no aprobará el año. En cambio, si el promedio es 3 o mayor, se felicita al estudiante porque se gradúa.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Para cada una de las 5 materias: Un mensaje indicando si el estudiante está en riesgo académico o bien en esa materia, mostrando el nombre de la materia y su calificación.
+                - Un mensaje final indicando si el estudiante aprueba el año o se gradúa, mostrando el promedio general.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function registrosNotasPromedio () {
+
+                        alert("El sistema solicitara al usuario ingresar el nombre del estudiante y luego permitira registrar las notas de 5 materias. Al finalizar, mostrara cada materia con su respectiva nota y calcula el promedio general.")
+
+                        let nombre = prompt("Ingrese el nombre del estudiante:");
+                        let materias = [];
+                        let notas = [];
+
+                        for (let i = 1; i <= 5; i++) {
+                            let materia = prompt("Ingrese la materia número " + i);
+                            let nota = parseFloat(prompt("Ingrese la nota de " + materia));
+                            materias.push(materia);
+                            notas.push(nota);
+                        }
+
+                        for (let i = 0; i < materias.length; i++) {
+                            if(notas[i]"<"3){
+                                alert("El estudiante " + nombre + " se encuentra en riesgo académico en la materia de "+  materias[i] + " ya que obtuvo una calificación de " + notas[i]);
+                            }
+                            else{
+                                alert("El estudiante " + nombre + " esta bien en la materia de "+  materias[i] + " ya que obtuvo una calificación de " + notas[i]);
+                            }
+                            
+                        }
+                        
+                        let suma = 0;
+                        for (let i = 0; i < notas.length; i++) {
+                            suma += notas[i];
+                        }
+                        let promedio = suma / notas.length;
+                        if (promedio"<"3){ 
+                            alert("El estudiante " + nombre + " no aprobara el año ya que su promedio fue: " + promedio);
+                        }else{
+                            alert("El estudiante se gradua con un promedio de: " + promedio)
+                        }
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton20">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont22">
+            <h1>Ejercicio arreglo #21: Encuesta de satisfacción con resultados</h1>
+            <h2>Estructura condicional y bucle y manejo de arreglos</h2>
+            <p>El programa realiza una encuesta a 10 usuarios sobre un servicio (escala de 1 a 5). Al finalizar, muestra cuántas personas votaron por cada número y el promedio de satisfacción general. También indica si la mayoría se mostró satisfecha (4 o más).</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Calificación del servicio (1 a 5)</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Lo primero que hago es establecer que son 10 usuarios en total. Después, creo una lista vacía para guardar las notas que me den y también unas variables para llevar la cuenta de cuántas personas eligen cada número (del 1 al 5), todas empiezan en cero.
+                Luego, entro en un ciclo que se repite 10 veces, una por cada usuario. En cada vuelta, le pido al usuario que me dé su calificación del servicio. Esa nota la convierto a un número entero. Es importante que la nota esté entre 1 y 5, así que meto un if para revisar eso. Si el usuario se equivoca y pone un número fuera de ese rango, le muestro un mensaje de error y paro el programa ahí mismo con un return. Pero si la nota es válida, la guardo en mi lista de valoraciones. Inmediatamente después, uso un switch para saber qué número puso el usuario y así ir sumando en el contador que le corresponde. Por ejemplo, si un usuario pone un 3, mi contador vota3 aumenta en uno.
+                Cuando ya tengo las 10 calificaciones, salgo del ciclo y lo primero que hago es mostrarle al usuario cuántas personas dieron cada calificación, usando varios mensajes alert. Después de eso, me toca calcular el promedio general. Lo hago multiplicando cada calificación (1, 2, 3, 4 y 5) por cuántas personas la eligieron, sumo todos esos resultados y luego divido esa suma por el total de personas que participaron en la encuesta.
+                Finalmente, reviso el promedio que me dio. Si el promedio es mayor a 3.9, le digo al usuario que la satisfacción es positiva. Si es 3.9 o menos, el mensaje es que la satisfacción general es negativa.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Cinco mensajes separados, uno por cada calificación (del 1 al 5), indicando cuántas personas votaron por ese número.
+                - Un mensaje final que indica si la satisfacción general es positiva o negativa, mostrando el promedio calculado.
+                - Un mensaje de error si el usuario ingresa una calificación fuera del rango permitido (1-5).</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function encuestaSatisfaccion () {
+
+                        alert("Este programa realizara una encuesta a 10 usuarios sobre un servicio (escala de 1 a 5). Al finalizar, mostrara cuantas personas votaron por cada número y el promedio de satisfacción general. También indica si la mayoría se mostró satisfecha (4 o más)")
+
+                        const usuarios = 10;
+                        const valoraciones = [];
+                        let vota1 = 0;
+                        let vota2 = 0;
+                        let vota3 = 0;
+                        let vota4 = 0;
+                        let vota5 = 0;
+
+                        for (let i = 1; i <= usuarios; i++ ) {
+                            let votos = parseInt(prompt("Usuario # " + (i) + " ingresa la calificacion que tienes sobre nuestro servicio"))
+                                if (votos > 0 && votos <= 5) {
+                                    }else {
+                                        alert("Ingresaste un valor invalido al permitido en la encuesta")
+                                        return;
+                                    }
+                                valoraciones.push(votos)
+                                switch (votos) {
+                                case 1:
+                                        vota1=vota1+1
+                                    break;
+                                case 2:
+                                        vota2=vota2+1                
+                                    break;
+                                case 3:
+                                        vota3=vota3+1                
+                                    break;
+                                case 4:
+                                        vota4=vota4+1                
+                                    break;
+                                case 5:
+                                        vota5=vota5+1                
+                                    break;        
+                            }
+                        }
+                        alert("De las 10 personas que votaron, " + vota1 + " nos dieron una valoracion de 1")
+                        alert("De las 10 personas que votaron, " + vota2 + " nos dieron una valoracion de 2")
+                        alert("De las 10 personas que votaron, " + vota3 + " nos dieron una valoracion de 3")
+                        alert("De las 10 personas que votaron, " + vota4 + " nos dieron una valoracion de 4")
+                        alert("De las 10 personas que votaron, " + vota5 + " nos dieron una valoracion de 5")
+
+                        let promedio = 0
+                        promedio=(((vota1 * 1)+(vota2 * 2)+(vota1 * 3)+(vota4 * 4)+(vota5 * 5))/((vota1) + (vota2) + (vota3) + (vota4) + (vota5)))
+
+                        if(promedio>3.9){
+                            alert("La satisfaccion general es positiva teniendo en cuenta el resultado de:  " + promedio)
+                            }
+                            else{
+                            alert("La satisfaccion general es negativa teniendo en cuenta el resultado de:  " + promedio)
+                            }
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton21">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont23">
+            <h1>Ejercicio arreglo #22: Análisis de temperaturas semanales</h1>
+            <h2>Estructura condicional y de bucle utilizado tambien arreglos</h2>
+            <p>Se proporciona un arreglo con las temperaturas registradas durante una semana: [22, 24, 21, 23, 25, 26, 22]. El programa debe calcular la temperatura promedio, mostrar la más alta, la más baja, y cuántos días superaron los 23 grados.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: No hay ningun dato de entrada, el programa ya tiene una lista definida con las temperaturas registradas durante una semana</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Mi código arranca con un mensaje que le dice al usuario lo que voy a hacer: calcular el promedio, la más alta, la más baja y cuántos días superaron los 23 grados de una lista de temperaturas que ya tengo definida.Para empezar, creo una lista llamada temperaturas donde ya están guardadas las temperaturas de la semana. Después, inicializo unas variables que voy a usar: una para contar los días con temperaturas "más altas" (empezando en cero), otra para la temperatura mínima (la inicializo con el primer valor de mi lista de temperaturas para tener un punto de partida), otra para la máxima (también con el primer valor), y una para la suma de todas las temperaturas (en cero).
+                Luego, recorro mi lista de temperaturas elemento por elemento. En cada paso, lo primero que hago es sumar la temperatura actual a mi variable suma. Al mismo tiempo, dentro de este mismo recorrido, hago dos comprobaciones: <br>
+                - Si la temperatura actual es menor que la tempMin que tengo registrada hasta ahora, actualizo tempMin con esta nueva temperatura más baja. <br>
+                - Si la temperatura actual es mayor que la tempMax que tengo registrada hasta ahora, actualizo tempMax con esta nueva temperatura más alta. <br>
+                Después de este primer recorrido, ya tengo la suma total de las temperaturas, la temperatura mínima y la máxima.Para saber cuántos días superaron los 23 grados, hago un segundo recorrido por la lista de temperaturas. En cada día, pregunto si la temperatura es mayor a 23. Si lo es, aumento mi contador masAltas en uno. Una vez que tengo todos los datos, calculo el promedio dividiendo la suma total de las temperaturas por la cantidad de temperaturas que hay en la lista (que es el tamaño de mi arreglo temperaturas). Finalmente, muestro al usuario, en un solo mensaje de alerta, todos los resultados: la temperatura máxima, la mínima, el total de días que superaron los 23 grados y el promedio de todas las temperaturas.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>Un mensaje final que resume todos los cálculos: <br>
+                    - La temperatura más alta en °C. <br>
+                    - La temperatura más baja en °C. <br>
+                    - La cantidad de días que superaron los 23°C. <br>
+                    - El promedio de las temperaturas en °C.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function analisisTemperaturas () {
+
+                        alert("Se proporciona un arreglo con las temperaturas registradas durante una semana: [22, 24, 21, 23, 25, 26, 22]. El programa debe calcular la temperatura promedio, mostrar la más alta, la más baja, y cuántos días superaron los 23 grados. ")
+                        
+                        const temperaturas = [22, 24, 21, 23, 25, 26, 22];
+                        let masAltas = 0;
+                        let tempMin = temperaturas[0];
+                        let tempMax = temperaturas[0];
+                        let suma = 0;
+                        
+                        for (let i = 0; i < temperaturas.length; i++) {
+                            suma = suma + temperaturas[i]
+                                if (temperaturas[i] < tempMin){
+                                    tempMin = temperaturas[i] 
+                                } else if (temperaturas[i] > tempMax)
+                                        tempMax = temperaturas[i]
+                    }
+
+                        for (let i = 0 ; i < temperaturas.length; i++) {
+                            if (temperaturas[i] > 23) {
+                                masAltas = masAltas + 1
+                            }
+                    }
+
+                        let promedio = suma / temperaturas.length
+
+                        alert("La temperatura mas alta es de " + tempMax + "°C" + "\nLa temperatura mas baja es de " + tempMin + "°C" + "\nLos dias que superaron los 23°C es un total de " + masAltas + "\nEl promedio de las temperaturas es " + promedio + "°C")
+
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton22">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
+        <section id="cont24">
+            <h1>Ejercicio arreglo #5: Filtrado de estudiantes aprobados</h1>
             <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+            <p>Dado el arreglo de calificaciones de estudiantes: [4.5, 2.9, 3.7, 1.8, 4.2, 3.0, 2.5, 5.0] El sistema debe mostrar solo las notas aprobadas (mayores o iguales a 3.0), indicar cuántos aprobaron y cuántos no, y calcular el promedio de los aprobados.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
