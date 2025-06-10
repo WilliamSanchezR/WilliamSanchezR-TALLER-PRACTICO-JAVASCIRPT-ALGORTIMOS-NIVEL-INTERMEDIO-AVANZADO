@@ -575,8 +575,7 @@
             <hr>
         </section>
         <section id="cont9">
-            <h1>Ejercicio condicional #8: Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de 
-Sangre</h1>
+            <h1>Ejercicio condicional #8: Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de Sangre</h1>
             <h2>Estructura condicional</h2>
             <p>Un sistema de un banco de sangre necesita informar a los donantes y receptores sobre las 
             posibles compatibilidades de donación según el tipo de sangre: <br>
@@ -1523,168 +1522,454 @@ Sangre</h1>
             <hr>
         </section>
         <section id="cont24">
-            <h1>Ejercicio arreglo #5: Filtrado de estudiantes aprobados</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
+            <h1>Ejercicio arreglo #23: Filtrado de estudiantes aprobados</h1>
+            <h2>Estructura condicional y bucle utilizado tambien arreglos</h2>
             <p>Dado el arreglo de calificaciones de estudiantes: [4.5, 2.9, 3.7, 1.8, 4.2, 3.0, 2.5, 5.0] El sistema debe mostrar solo las notas aprobadas (mayores o iguales a 3.0), indicar cuántos aprobaron y cuántos no, y calcular el promedio de los aprobados.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: No hay ningun dato de entrada, el programa ya tiene una lista predefinida de notas de estudiantes</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>filtrar las notas de un grupo de estudiantes para saber quiénes aprobaron y quiénes no. También calcularé el promedio solo de los que sí aprobaron. Para empezar, defino mi lista de notas con los valores que ya tengo. Después, creo unas variables que necesito: suma para acumular las notas de los aprobados (la inicializo en cero), aprobados para contar cuántos pasaron (también en cero), y reprobados para los que no (igualmente en cero), Luego, recorro mi lista de notas una por una. Por cada nota, hago una pregunta: ¿es la nota mayor o igual a 3.0? <br>
+                - Si la respuesta es sí, significa que el estudiante aprobó. En ese caso, sumo esa nota a mi variable suma y aumento mi contador aprobados en uno. <br>
+                - Si la respuesta es no (es decir, la nota es menor a 3.0), entonces el estudiante reprobó, y solo aumento mi contador reprobados en uno. <br>
+                Cuando termino de revisar todas las notas en la lista, ya tengo la suma de las notas de los que aprobaron y el conteo de cuántos aprobaron y cuántos reprobaron, con esos datos, calculo el promedio de los aprobados dividiendo la suma de sus notas entre la cantidad de aprobados. Finalmente, muestro al usuario un único mensaje con todos los resultados importantes: la cantidad de estudiantes que aprobaron, la cantidad de los que reprobaron y el promedio de las notas de los que sí lograron pasar. El promedio lo muestro con solo dos decimales para que se vea más ordenado.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>Un mensaje final que resume los resultados: <br>
+                    - La cantidad de estudiantes que aprobaron. <br>
+                    - La cantidad de estudiantes que reprobaron. <br>
+                    - El promedio de las notas de los estudiantes aprobados, con dos decimales.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function filtroEstudiantes () {
+
+                        alert("Este algoritmo hara como filtro de unos estudiantes para saber si aprobaron o  no, dado el arreglo de calificaciones de estudiantes: [4.5, 2.9, 3.7, 1.8, 4.2, 3.0, 2.5, 5.0] El sistema debera mostrar solo las notas aprobadas (mayores o iguales a 3.0), indicar cuántos aprobaron y cuántos no, y calcular el promedio de los aprobados.")
+                        
+                        const notas = [4.5, 2.9, 3.7, 1.8, 4.2, 3.0, 2.5, 5.0];
+                        let suma = 0;
+                        let aprobados = 0;
+                        let reprobados = 0;
+                        
+                        for (let i = 0; i < notas.length; i++) {
+                                if (notas[i] >= 3.0){
+                                    suma = suma + notas[i]
+                                    aprobados = aprobados + 1
+                                } else
+                                        reprobados = reprobados + 1
+
+                    }
+
+                        let promedio = suma / aprobados
+
+                        alert("La cantidad de estudiantes que aprobaron son " + aprobados + "\n La cantidad de estudiantes que reprobaron fueron: " + reprobados + "\n La nota promedio de todos los estudiantes fue de: " + promedio.toFixed(2))
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton23">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont25">
+            <h1>Ejercicio objeto #24: Registro de usuario y validación de acceso</h1>
+            <h2>Estructura condicional y de bucle utilizado tambien objetos y arreglos</h2>
+            <p>El sistema permite registrar un usuario (nombre, correo, contraseña). Luego, pide que se inicien sesión ingresando los datos. Si coinciden, se da acceso. Si no, se permite reintentar hasta 3 veces. </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: El programa pide al usuario que ingrese el nombre, email y contraseña del nuevo usuario.</li></p>
+                <p><li>Segundo Dato: el programa pide al usuario que ingrese el correo y la contraseña para intentar iniciar sesión.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Mi código empieza con un mensaje que le explica al usuario lo que voy a hacer: primero, se registrará un usuario con su nombre, correo y contraseña. Luego, se intentará iniciar sesión con esos datos, permitiendo hasta 3 intentos si hay errores, para empezar, creo una lista vacía llamada usuarios donde guardaré la información de cada usuario que se registre. También defino una variable cantidadUsuarios en 1, porque en este momento solo voy a registrar a un usuario.
+                Después, se crea un ciclo for que se repetirá la cantidad de veces que tenga cantidadUsuarios. En este caso, solo una vez. Dentro del ciclo, le pido al usuario que ingrese el nombre, el email y la clave del usuario. Con estos datos, creo un objeto con sus propiedades (nombre, email, clave) y lo agrego a mi lista usuarios.
+                Una vez que el usuario está registrado, paso a la parte del inicio de sesión. Declaro una variable intentos en cero y otra usuarioEncontrado como nula, para saber si el usuario ha iniciado sesión correctamente. Ahora, entro en un ciclo while que me permite intentar el inicio de sesión. Este ciclo se repetirá mientras no haya encontrado al usuario (usuarioEncontrado sea nulo) y mientras los intentos sean menos de 3. Dentro de este ciclo, le pido al usuario que ingrese el correo y la contraseña con los que quiere iniciar sesión. Luego se recorre la lista de usuarios que tengo registrada. Por cada usuario en mi lista, comparo si el email ingresado coincide con el email de un usuario registrado Y si la clave ingresada coincide con la clave de ese mismo usuario.
+                Si encuentro una coincidencia, significa que el inicio de sesión es correcto. Entonces, guardo ese objeto de usuario en mi variable usuarioEncontrado y uso un break para salirme del ciclo de búsqueda de usuarios, porque ya lo encontré. Si al terminar de revisar todos los usuarios (y no se activó el break), mi variable usuarioEncontrado sigue siendo nula, quiere decir que las credenciales no coincidieron. En ese caso, aumento mi contador de intentos en uno y le muestro un mensaje al usuario diciendo que el usuario o la contraseña son incorrectos y cuántos intentos le quedan.
+                Finalmente, cuando el ciclo while termina (ya sea porque se encontró el usuario o porque se agotaron los 3 intentos), reviso si usuarioEncontrado tiene un valor (es decir, ya no es nulo). <br>
+                - Si sí tiene un valor, le doy un mensaje de bienvenida al usuario, mostrando su nombre. <br>
+                - Si no tiene un valor, significa que se agotaron los intentos y le muestro un mensaje de acceso denegado.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Mensaje de bienvenida. <br>
+                    - Mensaje de error por numero de intento fallido. <br>
+                    - Mensaje si no logra entrar.
+                </p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function registroUsuario () {
+
+                        alert("Ejercicio objeto #1: Registro de usuario y validación de acceso Descripción: El sistema permite registrar un usuario (nombre, correo, contraseña). Luego, pide que se inicien sesión ingresando los datos. Si coinciden, se da acceso. Si no, se permite reintentar hasta 3 veces. ")
+
+                        let usuarios = [];
+                        let cantidadUsuarios = 1;
+
+                        for (let i = 0; i < cantidadUsuarios; i++) {
+                            let variableNombre = prompt("Ingrese el nombre del usuario N°" + (i + 1));
+                            let variableEmail = prompt("Ingrese el email del usuario N°" + (i + 1));
+                            let variableClave = prompt("Ingrese la clave del usuario N°" + (i + 1));
+
+                            usuarios.push({
+                                nombre: variableNombre,
+                                email: variableEmail,
+                                clave: variableClave,
+                            });
+                        }
+
+                        let intentos = 0;
+                        let usuarioEncontrado = null;
+
+                        while (intentos < 3 && !usuarioEncontrado) {
+                            let correoIngresado = prompt("Ingrese el correo con el que desea iniciar sesión");
+                            let claveIngresada = prompt("Ingrese la contraseña con la que desea iniciar sesión");
+
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i].email === correoIngresado && usuarios[i].clave === claveIngresada) {
+                                    usuarioEncontrado = usuarios[i];
+                                    break;
+                                }
+                            }
+
+                            if (!usuarioEncontrado) {
+                                intentos++;
+                                alert("Usuario o contraseña incorrectos. Intento " + intentos + " de 3.");
+                            }
+                        }
+
+                        if (usuarioEncontrado) {
+                            alert("BIENVENIDO " + usuarioEncontrado.nombre);
+                        } else {
+                            alert("Acceso denegado. Excediste el número de intentos.");
+                        }
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton24">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont26">
+            <h1>Ejercicio objeto #25: Agenda de contactos</h1>
+            <h2>Estructura condicional y bucle utilizando objetos y arreglos</h2>
+            <p>Crear un sistema donde el usuario puede registrar hasta 5 contactos, cada uno con nombre, número y correo. Luego, puede consultar un contacto por nombre y editar sus datos si lo desea.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Nombre, número de teléfono y correo electrónico de hasta 5 contactos. </li></p>
+                <p><li>Segundo Dato: Nombre del contacto que el usuario desea buscar.</li></p>
+                <p><li>Tercer Dato: Respuesta del usuario sobre si desea o no editar el contacto encontrado.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Para empezar, creo una lista vacía llamada contactos, donde voy a guardar todos los contactos que se registren,Luego, entro en un ciclo for que está diseñado para ejecutarse hasta 5 veces, con el objetivo de registrar los contactos. En cada repetición, le pido al usuario que ingrese el nombre, el número de teléfono y el correo electrónico para el contacto actual. Con esa información, creo un objeto con esas propiedades y lo agrego a mi lista contactos. Después de cada registro, le pregunto al usuario si quiere agregar otro contacto. Si el usuario escribe "no" (en cualquier combinación de mayúsculas o minúsculas), uso un break para salir del ciclo, incluso si no he llegado a los 5 contactos. Si dice "sí" o cualquier otra cosa, el ciclo continúa hasta que se registren los 5 o el usuario decida parar.
+                Una vez que he terminado de registrar contactos, le pido al usuario que ingrese el nombre del contacto que desea buscar. Para esto, declaro una variable buscarNombre para guardar lo que el usuario escriba y otra variable contactoEncontrado que inicialmente está null (vacía), y que usaré para guardar el contacto si lo encuentro.Ahora, recorro mi lista contactos completa. En cada contacto, comparo si el nombre de ese contacto (convertido a minúsculas, para que la búsqueda no distinga entre mayúsculas y minúsculas) es igual al nombre que el usuario quiere buscar (también convertido a minúsculas). Si encuentro una coincidencia, guardo ese objeto de contacto en contactoEncontrado y uso un break para salirme del ciclo de búsqueda, porque ya encontré lo que buscaba, después de este ciclo de búsqueda, reviso si contactoEncontrado tiene algún valor (es decir, si ya no es null). <br>
+                - Si sí encontré el contacto, muestro un mensaje alert con todos sus datos: nombre, número y correo. Inmediatamente después, le pregunto al usuario si desea editar los datos de este contacto. Si el usuario dice "sí" (nuevamente, sin importar mayúsculas/minúsculas), le pido que ingrese el nuevo nombre, nuevo número y nuevo correo. Estos nuevos datos reemplazan los anteriores en el objeto contactoEncontrado. Finalmente, le doy un mensaje de que el contacto fue actualizado con éxito. Si el usuario no quiere editar, le digo que no se realizaron cambios. <br>
+                - Si contactoEncontrado sigue siendo null, significa que el contacto no se encontró en mi lista y le muestro un mensaje avisándole que no se encontró el contacto. Con esto, el algoritmo termina.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- Contacto encontrado con todos sus datos. <br>
+                - Confirmación de edición exitosa. <br>
+                - Mensaje si no se realizan cambios. <br>
+                - Aviso de que el contacto no fue encontrado.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function agendaContactos () {
+
+                        alert("Agenda de contactos crear un sistema donde el usuario puede registrar hasta 5 contactos, cada uno con nombre, número y correo. Luego, puede consultar un contacto por nombre y editar sus datos si lo desea. ")
+
+                        let contactos = [];
+
+                        // Realizamos un for con fin de registrar los contactos al inicio del algoritmo, pero le agregue una condicional que si el usuario no quiere agregar mas contactos agregue un no y se cancela el bucle, de no ser asi el bucle se repite 5 veces
+                        for (let i = 0; i < 5; i++) {
+                            let nombre = prompt("Ingrese el nombre del contacto #" + (i + 1));
+                            let numero = prompt("Ingrese el número de teléfono de " + nombre);
+                            let correo = prompt("Ingrese el correo electrónico de " + nombre);
+
+                            contactos.push({
+                                nombre: nombre,
+                                numero: numero,
+                                correo: correo
+                            });
+
+                            let continuar = prompt("¿Desea agregar otro contacto? (sí/no)").toLowerCase();
+                            if (continuar !== "sí" && continuar !== "si") {
+                                break;
+                            }
+                        }
+
+                        // Declaramos dos variables para que en una se agregue el nombre que el usuario de see buscar, y otra con una valor null(vacio), despues hacemos un bucle que recorra el objeto donde se agregaron los contactos guardados por el usuario buscando el contacto ingresado y al momento de encontrarlo se detenga.
+                        let buscarNombre = prompt("Ingrese el nombre del contacto que desea buscar:");
+
+                        let contactoEncontrado = null;
+
+                        for (let i = 0; i < contactos.length; i++) {
+                            if (contactos[i].nombre.toLowerCase() === buscarNombre.toLowerCase()) {
+                                contactoEncontrado = contactos[i];
+                                break;
+                            }
+                        }
+
+                        // Despues agregamos una condicional despues del for que recorre el objeto, con el fin de que el valor cambie a ser valor no-vacio nos genere un alert con su nombre y correo.
+                        if (contactoEncontrado) {
+                            alert("Contacto encontrado:\nNombre: " + contactoEncontrado.nombre + 
+                                "\nNúmero: " + contactoEncontrado.numero + 
+                                "\nCorreo: " + contactoEncontrado.correo);
+
+                        // Despues declaramos una variable solicitandole al usuario la posibilidad de editar el contacto encontrado, si nos da un si procede con el cambio (obviamente) de no ser asi le arroja el mensaje de que no se realizaron cambios.
+                            let editar = prompt("¿Desea editar este contacto? (sí/no)").toLowerCase();
+                            if (editar === "sí" || editar === "si") {
+                                contactoEncontrado.nombre = prompt("Nuevo nombre (anterior: " + contactoEncontrado.nombre + "):");
+                                contactoEncontrado.numero = prompt("Nuevo número (anterior: " + contactoEncontrado.numero + "):");
+                                contactoEncontrado.correo = prompt("Nuevo correo (anterior: " + contactoEncontrado.correo + "):");
+
+                                alert("¡Contacto actualizado con éxito!");
+                            } else {
+                                alert("No se realizaron cambios.");
+                            }
+                        } else {
+                            alert("Contacto no encontrado."); // Si al final de esta condicional no se encontro el cliente no da este alert y se terminaria el algoritmo.
+                        }
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton25">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont27">
+            <h1>Ejercicio objeto #26: Sistema de compras con carrito</h1>
+            <h2>Estructura condicional y bucle utilizando objetos y arreglos</h2>
+            <p>El usuario puede agregar productos a un carrito de compras. Cada producto es un objeto con nombre, precio y cantidad. Al finalizar, se muestra el total a pagar y un resumen de los productos.</p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Nombre del producto.</li></p>
+                <p><li>Segundo Dato: Precio unitario del producto.</li></p>
+                <p><li>Tercer Dato: Cantidad del producto. </li></p>
+                <p><li>Cuarto Dato: Confirmación del usuario para seguir agregando productos.</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Para empezar, creo una lista vacía llamada carrito, que será donde voy a guardar todos los productos que el usuario agregue. También inicializo una variable agregarOtro con el valor "sí", que me servirá para controlar mi ciclo de agregar productos. Luego, entro en un ciclo while que se va a repetir mientras la variable agregarOtro sea "sí" o "si". Dentro de este ciclo, le pido al usuario el nombre del producto, su precio unitario y la cantidad que desea comprar. Después de pedir estos datos, incluyo una condición if para validar lo que el usuario ingresó. Reviso si el precio o la cantidad no son números (usando isNaN) o si el precio es negativo, o si la cantidad es cero o negativa. Si alguna de estas condiciones se cumple, significa que los datos no son válidos, así que muestro un mensaje de error y uso continue para saltar el resto de la vuelta del ciclo y volver a pedir los datos. Si los datos son válidos, el programa sigue.
+                Si todo está bien, creo un objeto con el nombre, precio y cantidad del producto, y lo agrego a mi lista carrito. Finalmente, le pregunto al usuario si desea agregar otro producto. La respuesta se guarda en agregarOtro y se convierte a minúsculas, así el ciclo while sabrá si debe repetirse o terminar una vez que el usuario decide no agregar más productos (escribe "no"), el ciclo while termina. Entonces, inicializo dos variables: total en cero para acumular el costo de toda la compra, y resumen como un texto inicial que dirá "Resumen del carrito:" después, recorro mi lista carrito producto por producto. Por cada producto en el carrito, calculo su subtotal multiplicando el precio por la cantidad. Este subtotal lo sumo a mi total general. También voy construyendo mi texto resumen, agregando una línea por cada producto que muestra su nombre, precio unitario, cantidad y el subtotal de ese producto, todo con dos decimales para que se vea ordenado cuando ya he recorrido todos los productos, al final del texto resumen le agrego una línea más con el total a pagar de toda la compra, también con dos decimales, Por último, muestro todo el resumen completo en un único mensaje de alerta al usuario.</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- "Datos inválidos. Intenta nuevamente" (cuando el precio o cantidad no son correctos). <br>
+                - Resumen detallado de la compra. </p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function sistemaCompras () {
+
+                        alert("Sistema de compras, Podrás agregar productos a un carrito de compras. Al finalizar, verás un resumen detallado y el total a pagar.");
+
+                        let carrito = [];
+                        let agregarOtro = "sí";
+
+                        // Empezamos el algoritmo con un bucle while, donde el usuario al iniciar el algortimo le mostra la obcion de agregar el nombre del producto que valor tiene y la cantidad que compro, despues de que el usuario agregue el primer producto guardara esa informacion en el arreglo carrito, que se guardara como un objeto, despues se le dara la obcion de agregar mas productos si el escribe si, reiniciara el bucle, ahora en el bucle while agregue un if (condicional) donde los valores que ingrese el usuario en los valores de precio y cantidad, sean verificados que sean valores numericos y que sean mayores a 0 o iguales si, el caso que no cumplan con esos valores le dara un alert, si se cumple continuara con el bucle.
+
+                        while (agregarOtro === "sí" || agregarOtro === "si") {
+                            let nombreProducto = prompt("Ingrese el nombre del producto:");
+                            let precioProducto = parseFloat(prompt("Ingrese el precio unitario del producto:"));
+                            let cantidadProducto = parseInt(prompt("Ingrese la cantidad del producto:"));
+
+                            if (isNaN(precioProducto) || isNaN(cantidadProducto) || precioProducto < 0 || cantidadProducto <= 0) {
+                                alert("Datos inválidos. Intenta nuevamente.");
+                                continue;
+                            }
+
+                            carrito.push({
+                                nombre: nombreProducto,
+                                precio: precioProducto,
+                                cantidad: cantidadProducto
+                            });
+
+                            agregarOtro = prompt("¿Desea agregar otro producto? (sí/no)").toLowerCase();
+                        }
+
+                        // Despues declaramos dos variables, una para que se guarde el resumen de toda la compra y la otra para mostrar el total, realizamos un for con la idea que recorra el arreglo (carrito) para que ubique los productos en el, cada vez que se ubique en un producto traera la informacion del nombre, precio y cantidad que puso el usuario, calculamos el valor de la compra total de ese producto, despues se mostrara en un alert el total de la compra que realizo el usuario, donde se mostrara el nombre del producto, el calculo de la compra y un total general de toda la compra
+
+                        let total = 0;
+                        let resumen = "Resumen del carrito:\n";
+
+                        for (let i = 0; i < carrito.length; i++) {
+                            let producto = carrito[i];
+                            let subtotal = producto.precio * producto.cantidad;
+                            total += subtotal;
+                            resumen += "- " + producto.nombre + " | $" + producto.precio.toFixed(2) + " x " + producto.cantidad + " = $" + subtotal.toFixed(2) + "\n";
+                        }
+
+                        resumen += "\nTotal a pagar: $" + total.toFixed(2);
+
+                        alert(resumen);
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton26">Click Aquí</button>
             <hr>
         </section>
-                <section id="cont3">
-            <h1>2. Título o nombre del algoritmo</h1>
-            <h2>Estructura condicional o bucle utilizado tambien si es objetos o arreglos</h2>
-            <p>Descripción del algoritmo (Cómo esté en la guía de aprendizaje)</p>
+        <section id="cont28">
+            <h1>Ejercicio objeto #27: Catálogo de películas</h1>
+            <h2>Estructura condicional utilizado objetos y arreglos</h2>
+            <p>Se tiene el siguiente arreglo de objetos con información de películas: 
+                const peliculas = [ 
+                { titulo: "Inception", genero: "Ciencia ficción", año: 2010 }, 
+                { titulo: "Titanic", genero: "Romance", año: 1997 }, 
+                { titulo: "Interstellar", genero: "Ciencia ficción", año: 2014 }, 
+                { titulo: "Coco", genero: "Animación", año: 2017 } 
+                ];
+                El sistema debe permitir al usuario: <br>
+                    ● Buscar películas por género. <br>
+                    ● Listar las películas estrenadas después del año 2000. </p>
             <hr>
             <h2>Análisis:</h2>
             <p>A continuación se describe el análisis del algoritmo</p>
             <div class="sub-items">
                 <h3>Datos de entrada:</h3>
-                <p><li>Primer Dato</li></p>
-                <p><li>Segundo Dato</li></p>
-                <p><li>Tercer Dato</li></p>
-                <p><li>Cuarto Dato</li></p>
+                <p><li>Primer Dato: Género de película que desea buscar el usuario</li></p>
                 <h3>Proceso:</h3>
-                <p>Descripción del algoritmo sin código, se crean tantas variables para tal proceso, se usa un condicional para x tarea y un for para esto otro.</p>
+                <p>Primero declaramos una variable que recibira el prompt del usuario solicitandole el genero que desea, luego creamos un arreglo donde se guardara el genero que busco el usuario, luego de eso realizamos un for que recorra el arreglo de peliculas con el fin de que encuentre un valor igual al que ingreso el usuario (genero) si encuentra un genero igual lo guardara en el arreglo de peliculasPorGenero con la posicion de la pelicula(s) que coninciden.
+                pasado lo anterior creamos un condicional que cuente la longitud del arreglo de peliculasPorGenero si la longitud es mayor a cero continuara declarando la variable resultadoGenero, despues continua con un bucle for que se repetira las veces que se cumpla la condicion de contador menor a arreglo de peliculasPorGenero, nos dara el mensaje de resultadoGenero gracias a la concatenacion nos dara un mensaje mas claro de cara al usuario, de no ser asi nos dara el alert de "No se encontraron peliculas..."
+                realizamos un for tomando en base al primer for pero enves de que la condicional sea comparar dos valores, sea comparando todos los valores de año (.año) donde se estreno las peliculas sean mayores a 2000 una vez eso se cumpla se agregan las posiciones al arreglo peliculasRecientes, despues de eso se declara una variable donde se dara el resultado, despues se hace un for para que dependiendo de la longitud del arreglo (peliculasRecientes) se ejecute y de el mensaje de las peliculas despues del 2000</p>
                 <h3>Datos o mensajes de salida:</h3>
-                <p>Datos o mensajes de salida esperados según el algoritmo</p>
+                <p>- lista de títulos y años de las películas de ese género. <br>
+                - Si no se encuentran películas por género: un mensaje indicando que no hay películas de ese género. <br>
+                - Por ultimo una lista de títulos, años y géneros de todas las películas estrenadas después del año 2000.</p>
             </div>
             <hr>
             <h2>Función relizada: </h2>
             <pre>
-            <code>
-                    <span class="comment">// Declarar un array</span>
-                    let colores = ["rojo", "verde", "azul"];
-                    console.log(colores);
-                    console.log(typeof colores); 
-                    <span class="comment">// object (arrays son objetos en JavaScript)</span>
+                <code>
+                    function catalogoPeliculas () {
+
+                        alert("Catálogo de películas\nDescripción: Podrás buscar películas por género y ver las que fueron estrenadas después del año 2000.");
+
+                        const peliculas = [ 
+                            { titulo: "Inception", genero: "ciencia ficcion", año: 2010 }, 
+                            { titulo: "Titanic", genero: "romance", año: 1997 }, 
+                            { titulo: "Interstellar", genero: "ciencia ficcion", año: 2014 }, 
+                            { titulo: "Coco", genero: "animacion", año: 2017 } 
+                        ];
+
+                        // Primero declaramos una variable que recibira el prompt del usuario solicitandole el genero que desea, luego creamos un arreglo donde se guardara el genero que busco el usuario, luego de eso realizamos un for que recorra el arreglo de peliculas con el fin de que encuentre un valor igual al que ingreso el usuario (genero) si encuentra un genero igual lo guardara en el arreglo de peliculasPorGenero con la posicion de la pelicula(s) que coninciden.
+
+                        let generoBuscado = prompt("Ingrese el género de películas que desea buscar:").toLowerCase();
+                        let peliculasPorGenero = [];
+
+                        for (let i = 0; i < peliculas.length; i++) {
+                            if (peliculas[i].genero.toLowerCase() === generoBuscado) {
+                                peliculasPorGenero.push(peliculas[i]);
+                            }
+                        }
+
+                        // pasado lo anterior creamos un condicional que cuente la longitud del arreglo de peliculasPorGenero si la longitud es mayor a cero continuara declarando la variable resultadoGenero, despues continua con un bucle for que se repetira las veces que se cumpla la condicion de contador menor a arreglo de peliculasPorGenero, nos dara el mensaje de resultadoGenero gracias a la concatenacion nos dara un mensaje mas claro de cara al usuario, de no ser asi nos dara el alert de "No se encontraron peliculas..."
+                        if (peliculasPorGenero.length > 0) {
+                            let resultadoGenero = "Películas del género '" + generoBuscado + "':\n";
+                            for (let i = 0; i < peliculasPorGenero.length; i++) {
+                                resultadoGenero += "- " + peliculasPorGenero[i].titulo + " (" + peliculasPorGenero[i].año + ")\n";
+                            }
+                            alert(resultadoGenero);
+                        } else {
+                            alert("No se encontraron películas del género '" + generoBuscado + "'.");
+                        }
+
+                        // realizamos un for tomando en base al primer for pero enves de que la condicional sea comparar dos valores, sea comparando todos los valores de año (.año) donde se estreno las peliculas sean mayores a 2000 una vez eso se cumpla se agregan las posiciones al arreglo peliculasRecientes, despues de eso se declara una variable donde se dara el resultado, despues se hace un for para que dependiendo de la longitud del arreglo (peliculasRecientes) se ejecute y de el mensaje de las peliculas despues del 2000
+
+                        let peliculasRecientes = [];
+
+                        for (let i = 0; i < peliculas.length; i++) {
+                            if (peliculas[i].año > 2000) {
+                                peliculasRecientes.push(peliculas[i]);
+                            }
+                        }
+
+                        let resultadoRecientes = "Películas estrenadas después del año 2000:\n";
+                        for (let i = 0; i < peliculasRecientes.length; i++) {
+                            resultadoRecientes += "- " + peliculasRecientes[i].titulo + " (" + peliculasRecientes[i].año + ", " + peliculasRecientes[i].genero + ")\n";
+                        }
+
+                        alert(resultadoRecientes);
+                    }
                 </code>
             </pre>
             <h2>Ejecución del algoritmo:</h2>
-            <button id="">Click Aquí</button>
+            <button id="boton27">Click Aquí</button>
+            <hr>
+        </section>
+        <section id="cont29">
+            <h1>Ejercicio objeto #28: Registro de vehículos y búsqueda por placa</h1>
+            <h2>Estructura condicional y de bucle utilizado objetos y arreglos</h2>
+            <p>Se tiene un arreglo de vehículos registrados: 
+            const vehiculos = [ 
+            { placa: "ABC123", marca: "Toyota", modelo: 2020 }, 
+            { placa: "XYZ789", marca: "Chevrolet", modelo: 2018 }, 
+            { placa: "LMN456", marca: "Ford", modelo: 2022 } 
+            ]; 
+            El programa debe permitir al usuario ingresar una placa, buscar el vehículo correspondiente y mostrar sus 
+            datos. Si no existe, debe mostrar un mensaje de error.</p>
+            <hr>
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer Dato: El usuario debe ingresar la placa del vehículo que quiere encontrar.</li></p>
+                <h3>Proceso:</h3>
+                <p>Empezamos declarando una varibale(placaBuscada) donde se guardar lo ingresado por el usuario en el prompt, despues declaramos otra variable donde guardara un valor null(vacio) despues hacemos un for que recorrera el arreglo(vehiculos) donde se ejecutara la cantidad de objetos que tenga el arreglo, donde si se cumple la condicion del for empezara a comparar todos las claves(placa) con la variable placaBuscada, de encontrarse un igual el valor de la variable vehiculoEncontrado pasara de null(vacio) a el valor de de la placa encontrada al momento que se encuentra se activa el break y se interrumpe el bucle, despues ponemos una condicional donde si el vehiculoEncontrado es un valor diferente a null(vacio) seguira a declarar una variable donde mostrara el resultado con todos los datos que viene con la placa encontrada, de no cumplirse con ninguna de las condiciones dara el mensaje de error.</p>
+                <h3>Datos o mensajes de salida:</h3>
+                <p>- Un mensaje mostrando la placa, marca y modelo del vehículo.<br>
+                - Si no se encuentra el vehículo: un mensaje de error indicando que no se encontró la placa ingresada.</p>
+            </div>
+            <hr>
+            <h2>Función relizada: </h2>
+            <pre>
+                <code>
+                    function registroVehiculos () {
+
+                        alert("Registro de vehículos\nDescripción: Podrás buscar un vehículo ingresando su placa. Si existe, se mostrarán sus datos; de lo contrario, se mostrará un mensaje de error.");
+
+                        const vehiculos = [ 
+                            { placa: "ABC123", marca: "Toyota", modelo: 2020 }, 
+                            { placa: "XYZ789", marca: "Chevrolet", modelo: 2018 }, 
+                            { placa: "LMN456", marca: "Ford", modelo: 2022 } 
+                        ];
+
+                        // Empezamos declarando una varibale(placaBuscada) donde se guardar lo ingresado por el usuario en el prompt, despues declaramos otra variable donde guardara un valor null(vacio) despues hacemos un for que recorrera el arreglo(vehiculos) donde se ejecutara la cantidad de objetos que tenga el arreglo, donde si se cumple la condicion del for empezara a comparar todos las claves(placa) con la variable placaBuscada, de encontrarse un igual el valor de la variable vehiculoEncontrado pasara de null(vacio) a el valor de de la placa encontrada al momento que se encuentra se activa el break y se interrumpe el bucle, despues ponemos una condicional donde si el vehiculoEncontrado es un valor diferente a null(vacio) seguira a declarar una variable donde mostrara el resultado con todos los datos que viene con la placa encontrada, de no cumplirse con ninguna de las condiciones dara el mensaje de error.
+
+                        let placaBuscada = prompt("Ingrese la placa del vehículo que desea buscar:").toUpperCase(); //usamos el .toUpperCase para que si el usuario agrega un valor string en minusculas lo pasara a mayusculas
+                        
+                        let vehiculoEncontrado = null;
+
+                        for (let i = 0; i < vehiculos.length; i++) {
+                            if (vehiculos[i].placa === placaBuscada) {
+                                vehiculoEncontrado = vehiculos[i];
+                                break;
+                            }
+                        }
+
+                        if (vehiculoEncontrado !== null) {
+                            let resultado = "Vehículo encontrado:\n";
+                            resultado += "- Placa: " + vehiculoEncontrado.placa + "\n";
+                            resultado += "- Marca: " + vehiculoEncontrado.marca + "\n";
+                            resultado += "- Modelo: " + vehiculoEncontrado.modelo;
+                            alert(resultado);
+                        } else {
+                            alert("No se encontró ningún vehículo con la placa '" + placaBuscada + "'.");
+                        }
+                    }
+                </code>
+            </pre>
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="boton28">Click Aquí</button>
             <hr>
         </section>
 
@@ -1697,10 +1982,34 @@ Sangre</h1>
             <ul id="ul-btns" class="">
                 <li><h3>Menú</h3></li>
                 <li><button id="cap1">Portada</button></li>
-                <li><button id="cap2">Algoritmo 1: Nombre del algoritmo</button></li>
-                <li><button id="cap3">Algoritmo 2: Nombre del algoritmo</button></li>
-                <li><button id="cap4">Algoritmo 3: Nombre del algoritmo</button></li>
-                <li><button id="cap5">Algoritmo 4: Nombre del algoritmo</button></li>
+                <li><button id="cap2">Ejercicio condicional #1: Sistema de Calificaciones Detallado</button></li>
+                <li><button id="cap3">Ejercicio condicional #2: Clasificación de Etapas de la Vida con Contexto Educativo</button></li>
+                <li><button id="cap4">Ejercicio condicional #3: Conversor Flexible de Tiempo (Días y Meses)</button></li>
+                <li><button id="cap5">Ejercicio condicional #4: Menú Interactivo de Operaciones Matemáticas</button></li>
+                <li><button id="cap6">Ejercicio condicional #5: Cálculo de Tarifa de Servicio Público con Contexto Residencial</button></li>
+                <li><button id="cap7">Ejercicio condicional #6: Clasificación del Índice de Masa Corporal (IMC) y Recomendaciones de Salud</button></li>
+                <li><button id="cap8">Ejercicio condicional #7: Calculadora de Sueldo con Bonificaciones por Hijos en una Empresa</button></li>
+                <li><button id="cap9">Ejercicio condicional #8: Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de Sangre</button></li>
+                <li><button id="cap10">Ejercicio condicional #9: Calculadora de Notas con Nivel de Desempeño Detallado en un Curso</button></li>
+                <li><button id="cap11">Ejercicio condicional #10: Descuento por Tipo de Cliente en una Tienda con Detalles de la Compra</button></li>
+                <li><button id="cap12">Ejercicio #11: Contador de Números Positivos y Negativos</button></li>
+                <li><button id="cap13">Ejercicio #12: Validador de Contraseña con Intentos Limitados</button></li>
+                <li><button id="cap14">Ejercicio #13: Acumulador de Compras hasta Monto Límite</button></li>
+                <li><button id="cap15">Ejercicio #14: Ingreso de Estudiantes hasta Cupo Máximo</button></li>
+                <li><button id="cap16">Ejercicio #15: Cajero Electrónico con Operaciones de Retiro y Transferencia</button></li>
+                <li><button id="cap17">Ejercicio #16: Tabla de Multiplicar Personalizada</button></li>
+                <li><button id="cap18">Ejercicio #17: Suma de los Primeros N Números Naturales</button></li>
+                <li><button id="cap19">Ejercicio #18: Contador de Caracteres en Palabras</button></li>
+                <li><button id="cap20">Ejercicio #19: Generador de Secuencia de Números Pares</button></li>
+                <li><button id="cap21">Ejercicio arreglo #20: Registro de notas y cálculo del promedio general</button></li>
+                <li><button id="cap22">Ejercicio arreglo #21: Encuesta de satisfacción con resultados</button></li>
+                <li><button id="cap23">Ejercicio arreglo #22: Análisis de temperaturas semanales</button></li>
+                <li><button id="cap24">Ejercicio arreglo #23: Filtrado de estudiantes aprobados</button></li>
+                <li><button id="cap25">Ejercicio objeto #24: Registro de usuario y validación de acceso</button></li>
+                <li><button id="cap26">Ejercicio objeto #25: Agenda de contactos</button></li>
+                <li><button id="cap27">Ejercicio objeto #26: Sistema de compras con carrito</button></li>
+                <li><button id="cap28">Ejercicio objeto #27: Catálogo de películas</button></li>
+                <li><button id="cap29">Ejercicio objeto #28: Registro de vehículos y búsqueda por placa</button></li>
             </ul>
         </div>
     </div>
@@ -1708,11 +2017,11 @@ Sangre</h1>
     <footer class="footer">
         <p>Puedes encontrarme en:</p>
         <ul class="social-links">
-            <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://github.com/WilliamSanchezR" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
             <li><a href="https://www.linkedin.com/" target="_blank"><i
                         class="fab fa-linkedin"></i> LinkedIn</a></li>
             
-            <li><a href="mailto:tucorrero@gmail.com"><i class="fas fa-envelope"></i> Correo Electrónico</a></li>
+            <li><a href="mailto:sanchezwill596@gmail.com?Subject=Consulta&Body=Me gustaría saber sobre tu servicio""><i class="fas fa-envelope"></i> Correo Electrónico</a></li>   
         </ul>
         <p class="copyright">&copy; 2025 Tus Nombres - Web Developer</p>
     </footer>

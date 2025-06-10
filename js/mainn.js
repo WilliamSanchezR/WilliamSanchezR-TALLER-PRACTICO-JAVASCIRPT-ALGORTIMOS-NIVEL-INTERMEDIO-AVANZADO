@@ -898,13 +898,11 @@ function registroUsuario () {
     let usuarios = [];
     let cantidadUsuarios = 1;
 
-    // Parte 2: solicitar los datos de los diferentes usuarios
     for (let i = 0; i < cantidadUsuarios; i++) {
         let variableNombre = prompt("Ingrese el nombre del usuario N°" + (i + 1));
         let variableEmail = prompt("Ingrese el email del usuario N°" + (i + 1));
         let variableClave = prompt("Ingrese la clave del usuario N°" + (i + 1));
 
-        // Creamos el objeto y lo agregamos al arreglo
         usuarios.push({
             nombre: variableNombre,
             email: variableEmail,
@@ -912,7 +910,6 @@ function registroUsuario () {
         });
     }
 
-    // Intentos de inicio de sesión (hasta 3)
     let intentos = 0;
     let usuarioEncontrado = null;
 
